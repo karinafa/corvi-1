@@ -66,6 +66,12 @@
 
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
+	                 <li>
+	                    <a href="signin.html">
+	                        <i class="material-icons">person</i>
+	                        <p>inicio</p>
+	                    </a>
+	                </li>                      
 	                <li class="active">
 	                    <a href="vitrina.html">
 	                        <i class="material-icons">dashboard</i>
@@ -76,6 +82,18 @@
 	                    <a href="signup.html">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
+	                    </a>
+	                </li>
+	                <li >
+	                    <a href="matricular.html">
+	                        <i class="material-icons">add_to_queue</i>
+	                        <p>Matricular</p>
+	                    </a>
+	                </li>
+                        <li>
+	                    <a href="agenda.html">
+	                        <i class="material-icons">schedule</i>
+	                        <p>Agenda</p>
 	                    </a>
 	                </li>
 	                
@@ -126,22 +144,115 @@
 							</li>
 						</ul>
 
-						<form class="navbar-form navbar-right" role="search">
+						
+					</div>
+				</div>
+			</nav>
+                <!-- search container -->
+                <div class="content">
+                
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						
+					</div>
+					<div class="collapse navbar-collapse">
+						<form class="navbar-form nav-align-center" role="search">
 							<div class="form-group  is-empty">
-								<input type="text" class="form-control" placeholder="Search">
+								<input type="text" class="form-control" placeholder="Comuna">
 								<span class="material-input"></span>
 							</div>
+                                                        <div class="form-group  is-empty">
+								<input type="text" class="form-control" placeholder="Desde UF">
+								<span class="material-input"></span>
+							</div>
+                                                        <div class="form-group  is-empty">
+								<input type="text" class="form-control" placeholder="Hasta UF">
+								<span class="material-input"></span>
+							</div>
+                                                        <div class="form-group  is-empty">
+								<input type="text" class="form-control" placeholder="Dormitorios">
+								<span class="material-input"></span>
+							</div>
+                                                    <div class="form-group  is-empty">
+								<input type="text" class="form-control" placeholder="Baños">
+								<span class="material-input"></span>
+							</div>
+                                                    
 							<button type="submit" class="btn btn-white btn-round btn-just-icon">
 								<i class="material-icons">search</i><div class="ripple-container"></div>
 							</button>
 						</form>
 					</div>
 				</div>
-			</nav>
-                
-<!-- Vitrina     -->
+		
+                    
+               	
+                <div class="content">
+                        <!-- AGREGAR TABLA -->
+                        <div class="col-lg-4" >
+	                        <div class="card">
+	                            <div class="card-header" data-background-color="purple">
+	                                <h4 class="title">Caracteristicas</h4>
+	                                <p class="category">Viviendas</p>
+	                            </div>
+	                            <div class="card-content table-responsive">
+	                                <table class="table">
+	                                    <thead class="text-primary">
+	                                    	<th>Características</th>
+	                                    	
+	                                    	
+											<th>Ctn</th>
+	                                    </thead>
+	                                    <tbody>
+	                                        <tr>
+	                                        	<td>ID</td>
+	                                        	
+												<td class="text-primary">1000</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>Hab</td>
+	                                        	
+												<td class="text-primary">3</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>Baños</td>
+	                                        	
+												<td class="text-primary">2</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>Piscina</td>
+	                                        	
+												<td class="text-primary">1</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>Mts2 Construidos</td>
+	                                        	
+												<td class="text-primary">100</td>
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>Mts2 Terreno</td>
+	                                        	
+												<td class="text-primary">150</td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
 
-			<div class="content">
+	                            </div>
+	                        </div>
+	                    </div>
+                        
+                       <!-- FIN AGREGAR TABLA --> 
+                </div>
+                    
+                    <!-- Vitrina -->
+                    
+                    <div class="content">
                             
                             
                   <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -172,9 +283,9 @@
 
                 <div class="pswp__counter"></div>
 
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--close" title="Cerrar (Esc)"></button>
 
-                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--share" title="Compartir"></button>
 
                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 
@@ -218,7 +329,26 @@
                             
 <!-- No remover este div     -->				
 			</div>
-<!-- Fin Vitrina     -->
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- Fin Vitrina -->
+             </div>  
+                
+
+                
+                
+                
+
+ 
+
+			
+
+
+
 
 
 			<footer class="footer">
@@ -264,40 +394,40 @@
         
         <script>
             var openPhotoSwipe = function() {
-    var pswpElement = document.querySelectorAll('.pswp')[0];
+            var pswpElement = document.querySelectorAll('.pswp')[0];
 
-    // build items array
-    var items = [
-        {
-            src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-            w: 964,
-            h: 1024
-        },
-        {
-            src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-            w: 1024,
-            h: 683
-        }
-    ];
+            // build items array
+            var items = [
+            {
+                src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
+                w: 964,
+                h: 1024
+            },
+            {
+                src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
+                w: 1024,
+                h: 683
+            }
+        ];
     
-    // define options (if needed)
-    var options = {
+        // define options (if needed)
+        var options = {
 			 // history & focus options are disabled on CodePen        
-      	history: false,
-      	focus: false,
+            history: false,
+            focus: false,
 
-        showAnimationDuration: 0,
-        hideAnimationDuration: 0
+            showAnimationDuration: 0,
+            hideAnimationDuration: 0
         
-    };
+        };
     
-    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-    gallery.init();
-};
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+        };
 
-openPhotoSwipe();
+        openPhotoSwipe();
 
-//document.getElementById('btn').onclick = openPhotoSwipe;
+        //document.getElementById('btn').onclick = openPhotoSwipe;
             
          
         </script>
