@@ -84,18 +84,18 @@
 	                        <p>Perfil de Usuario</p>
 	                    </a>
 	                </li>
-	                <li class="active">
+	                <li>
 	                    <a href="matricular.html">
 	                        <i class="material-icons">add_to_queue</i>
 	                        <p>Matricular</p>
 	                    </a>
 	                </li>
-                        <li>
+                        <li class="active">
 	                    <a href="comprar.html">
 	                        <i class="material-icons">add_shopping_cart</i>
 	                        <p>Comprar</p>
 	                    </a>
-	                </li>
+	                </li>     
                         <li>
 	                    <a href="agenda.html">
 	                        <i class="material-icons">schedule</i>
@@ -138,11 +138,11 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 									<i class="material-icons">notifications</i>
-									<span class="notification">2</span>
+									<span class="notification">5</span>
 									<p class="hidden-lg hidden-md">Notifications</p>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Tiene 2 nuevas solicitudes</a></li>
+									<li><a href="#">Tiene 5 nuevas solicitudes</a></li>
                                                                         <li><a href="#">Aún falta documentación</a></li>
 									
 								</ul>
@@ -170,22 +170,17 @@
 				<ul class="nav nav-tabs" data-tabs="tabs">
 					<li class="active">
 						<a href="#profile" data-toggle="tab">
-							<i class="material-icons">web_asset</i>
-							Datos Generales
+							<i class="material-icons">gavel</i>
+							Ofertar
 						<div class="ripple-container"></div></a>
 					</li>
 					<li class="">
 						<a href="#messages" data-toggle="tab">
-							<i class="material-icons">add_a_photo</i>
-							Imágenes
+							<i class="material-icons">monetization_on</i>
+							Comprar
 						<div class="ripple-container"></div></a>
 					</li>
-					<li class="">
-						<a href="#settings" data-toggle="tab">
-							<i class="material-icons">description</i>
-							Documentos
-						<div class="ripple-container"></div></a>
-					</li>
+				
 				</ul>
 			</div>
 		</div>
@@ -195,43 +190,43 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="profile">
 				<div class="card-content">
-	                                <form>
+	                                
 	                                    <div class="row">
-	                                        <div class="col-md-5">
+	                                        <div class="col-md-3">
 												<div class="form-group label-floating">
-													<label class="control-label">Dormitorios</label>
-													<input type="text" class="form-control">
+													<label class="control-label">ID</label>
+                                                                                                        <input type="text" class="form-control" disabled="">
 												</div>
 	                                        </div>
 	                                        
-	                                        <div class="col-md-4">
+	                                        <div class="col-md-3">
 												<div class="form-group label-floating">
 													<label class="control-label">Baños</label>
-													<input type="email" class="form-control" >
+													<input type="email" class="form-control" disabled="">
 												</div>
 	                                        </div>
 	                                    </div>
 
 	                                    <div class="row">
-	                                        <div class="col-md-6">
+	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Mts Superficie</label>
-													<input type="text" class="form-control" >
+													<input type="text" class="form-control" disabled="">
 												</div>
 	                                        </div>
-	                                        <div class="col-md-6">
+	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Mts Contruida</label>
-													<input type="text" class="form-control" >
+													<input type="text" class="form-control" disabled="">
 												</div>
 	                                        </div>
 	                                    </div>
 
 	                                    <div class="row">
-	                                        <div class="col-md-12">
+	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Valor UF</label>
-													<input type="text" class="form-control" >
+													<input type="text" class="form-control" disabled="">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -239,109 +234,87 @@
 	                                    <div class="row">
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
-													<label class="control-label">Gasto Común</label>
+													<label class="control-label">Ofertar</label>
 													<input type="text" class="form-control" >
 												</div>
 	                                        </div>
 	                                        <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Contribución Anual</label>
-													<input type="text" class="form-control" >
-												</div>
+										<button type="submit" class="btn btn-primary pull-right">Ofertar</button>
+	                                    <div class="clearfix"></div>		
 	                                        </div>
-	                                        <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Dirección</label>
-													<input type="text" class="form-control" >
-												</div>
-	                                        </div>
+	                                        
 	                                    </div>
                                             <div class="row">
-                                                <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Comuna</label>
-													<input type="text" class="form-control" >
-												</div>
-	                                        </div>
-                                                <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Referencia</label>
-													<input type="text" class="form-control" >
-												</div>
-	                                        </div>
+                                                
+                                                
                                                 
                                                 </div>
 
 	                                    
 
-	                                    <button type="submit" class="btn btn-primary pull-right">Ingresar</button>
-	                                    <div class="clearfix"></div>
-	                                </form>
+	                                    
+	                                
 	                            </div>
 			</div>
-			<div class="tab-pane" id="messages">
-				<div class="card card-stats ">
-                                    <div class="card-header" data-background-color="orange">
-                                        
-                                        <img src="../virtual/1000/h-w1020_h770_q80.jpg" alt="Casa" height="42" width="42">
+                    
+                        <div class="tab-pane" id="messages">
+                            <div class="row">
+                                <div class="col-lg-10">
+				<div class="alert alert-warning">
+                                    <div class="container-fluid">
+                                        <div class="alert-icon">
+                                            <i class="material-icons">warning</i>
+                                        </div>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                        </button>
+                                        <b>Importante:</b>  Declara que conoce el procedimiento y que se le enviará un correo con el compromiso de venta digital.
+                                        El ..
                                     </div>
-                                <div class="card-content">
-                                        <p class="category">Used Space</p>
-                                        <h3 class="title">49/50<small>GB</small></h3>
                                 </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>
-                                    </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    
+					<button type="submit" class="btn btn-primary pull-center">Comprar</button>
+	                                   <div class="clearfix"></div>		
+                                 
                                 </div>
+                            </div>
+                                <div class="row">
+                                <div class="col-lg-5">
+                                    <tbody>
+				<tr>
+					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
+					<td>Compromiso de Venta</td>
+					
+				</tr>
+                                    </tbody>
+                                    
+                                </div>   
+                                    
                                 </div>
-			</div>
-			<div class="tab-pane" id="settings">
-                                <div class="card-content table-responsive table-full-width">
-                                <table class="table">
-                                    <thead class="text-danger">
-                                        <th>Documentos</th>
-                                        <th>Ingreso</th>
-                                        
-			</thead>
-			<tbody>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Hipoteca</td>
-					
-				</tr>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Copia de Inscripcion de Dominio con Vigencia</td>
-				</tr>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Titulos de Dominios de los últimos 10 años</td>
-					
-				</tr>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Expropiación Fiscal</td>
-					
-				</tr>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Avaluo Fiscal</td>
-					
-				</tr>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Deuda</td>
-					
-				</tr>
-			</tbody>
-		</table>
-
-	</div>
-				<br/>
-			</div>
+                                
+                                
+                                
+                            </div>
+                            
+                            
+                            
+                            
+			
+			
+			
 		</div>
 	</div>
+                        
+                        <div class="card-content">
+                            
+                            
+                            
+                            
+                        </div>
 
 </div>
                     
@@ -396,7 +369,7 @@
 									Agenda
 								</a>
 							</li>
-                                                        						
+                                                        					
 						</ul>
 					</nav>
 					<p class="copyright pull-right">
