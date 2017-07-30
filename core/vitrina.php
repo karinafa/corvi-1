@@ -20,6 +20,8 @@
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
     
+    <link href="../assets/css/gallery.css" rel="stylesheet" />
+    
     
 
     <!--     Fonts and icons     -->
@@ -59,7 +61,7 @@
 		    -->
 
 			<div class="logo">
-				<a href="signin.html" class="simple-text">
+				<a href="signin.php" class="simple-text">
 					Corvi
 				</a>
 			</div>
@@ -67,37 +69,43 @@
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
 	                 <li>
-	                    <a href="signin.html">
+	                    <a href="signin.php">
 	                        <i class="material-icons">person</i>
-	                        <p>inicio</p>
+	                        <p>Inicio</p>
 	                    </a>
 	                </li>                      
 	                <li class="active">
-	                    <a href="vitrina.html">
+	                    <a href="vitrina.php">
 	                        <i class="material-icons">dashboard</i>
 	                        <p>Vitrina</p>
 	                    </a>
 	                </li>
 	                <li>
-	                    <a href="signup.html">
+	                    <a href="signup.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
 	                    </a>
 	                </li>
 	                <li >
-	                    <a href="matricular.html">
+	                    <a href="matricular.php">
 	                        <i class="material-icons">add_to_queue</i>
 	                        <p>Matricular</p>
 	                    </a>
 	                </li>
                         <li>
-	                    <a href="agenda.html">
+	                    <a href="comprar.php">
+	                        <i class="material-icons">add_shopping_cart</i>
+	                        <p>Comprar</p>
+	                    </a>
+	                </li>
+                        <li>
+	                    <a href="agenda.php">
 	                        <i class="material-icons">schedule</i>
 	                        <p>Agenda</p>
 	                    </a>
 	                </li>
                         <li>
-	                    <a href="admin.html">
+	                    <a href="admin.php">
 	                        <i class="material-icons">build</i>
 	                        <p>Admin</p>
 	                    </a>
@@ -256,9 +264,73 @@
                        <!-- FIN AGREGAR TABLA --> 
                 </div>
                     
+                    <div class="content">
+                        <!-- AGREGAR TABLA -->
+                        
+                        <div class="col-lg-4" >
+                            <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+	                        <div class="card">
+	                             
+	                            <div class="card-content table-responsive">
+                                        
+	                                <table class="table">
+	                                    <thead class="text-primary">
+	                                    	<th>Características</th>
+	                                    	
+	                                    	
+	
+	                                    </thead>
+                                            
+	                                    <tbody>
+	                                        <tr>
+	                                        	<td><figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                                            <a href="../virtual/1000/MC7541660-0.jpg" itemprop="contentUrl" data-size="400x200">
+                                                            <img src="../virtual/1000/MC7541660-0.jpg" itemprop="thumbnail" alt="Desrripción de Imagen" />
+                                                            </a>
+                                                            <figcaption itemprop="caption description">Imagen 1</figcaption>
+                                                            </figure>
+                                                            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                                            <a href="../virtual/1000/victorian.jpg" itemprop="contentUrl" data-size="400x200">
+                                                            <img src="../virtual/1000/victorian.jpg" itemprop="thumbnail" alt="Descripción de Imagen" />
+                                                            </a>
+                                                            <figcaption itemprop="caption description">Imagen 2</figcaption>
+                                                            </figure>
+                                                            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                                            <a href="../virtual/1000/victorian.jpg" itemprop="contentUrl" data-size="400x200">
+                                                            <img src="../virtual/1000/victorian.jpg" itemprop="thumbnail" alt="Descripción de Imagen" />
+                                                            </a>
+                                                            <figcaption itemprop="caption description">Imagen 3</figcaption>
+                                                            </figure>
+                                                        </td>
+	                                        	
+												
+	                                        </tr>
+	                                        <tr>
+	                                        	<td>
+                                                        
+                                                    </td>
+                                                </tr>
+	
+	                                    </tbody>
+	                                </table>
+                                        </div>           
+	                            </div>
+	                        </div>
+	                    </div>
+                        
+                       <!-- FIN AGREGAR TABLA --> 
+                </div>
+                    
+                    <!-- Galería Final-->
+                    
+                    
+                    
+                    
+                    
+                    
                     <!-- Vitrina -->
                     
-                    <div class="row" style="position: relative;">
+                    <div class="parent" style="position: relative;">
                             
                             
                   <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -391,15 +463,39 @@
 					<nav class="pull-left">
 						<ul>
 							<li>
-								<a href="#">
+								<a href="signin.php">
 									Inicio
 								</a>
 							</li>
 							<li>
-								<a href="#">
-									Empresa
+								<a href="signup.php">
+									Registro
 								</a>
-							</li>						
+							</li>
+                                                        <li>
+								<a href="matricular.php">
+									Matricular
+								</a>
+							</li>
+                                                        <li>
+								<a href="comprar.php">
+									Comprar
+								</a>
+							</li>
+                                                        <li>
+								<a href="vitrina.php">
+									Vitrina
+								</a>
+							</li>
+                                                        <li>
+								<a href="agenda.php">
+									Agenda
+								</a>
+							</li>
+                                                        
+                                                        
+                                                        
+                                                        
 						</ul>
 					</nav>
 					<p class="copyright pull-right">
@@ -423,49 +519,11 @@
 	<!-- Material Dashboard javascript methods -->
 	<script src="../assets/js/material-dashboard.js"></script>
 
-	
+	<!--Javascript Gallery -->
+        <script src="../assets/js/gallery.js"></script>
 
 	
         
-        <script>
-            var openPhotoSwipe = function() {
-            var pswpElement = document.querySelectorAll('.pswp')[0];
-
-            // build items array
-            var items = [
-            {
-                src: '../virtual/1000/MC7541660-0.jpg',
-                w: 964,
-                h: 1024
-            },
-            {
-                src: '../virtual/1000/victorian.jpg',
-                w: 1024,
-                h: 683
-            }
-        ];
-    
-        // define options (if needed)
-        var options = {
-			 // history & focus options are disabled on CodePen        
-            history: false,
-            focus: false,
-
-            showAnimationDuration: 0,
-            hideAnimationDuration: 0
-        
-        };
-    
-        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-        };
-
-        openPhotoSwipe();
-
-        //document.getElementById('btn').onclick = openPhotoSwipe;
-            
-         
-        </script>
         
 
 </html>

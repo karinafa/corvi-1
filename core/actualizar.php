@@ -47,31 +47,28 @@
 				<ul class="nav">
 	                
 	                 <li>
-	                    <a href="signin.html">
+	                    <a href="signin.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Inicio</p>
 	                    </a>
 	                </li>                      
-	                <li>
-	                    <a href="vitrina.html">
-	                        <i class="material-icons">dashboard</i>
-	                        <p>Vitrina</p>
-	                    </a>
-	                </li>
+	                
 	                <li class="active">
-	                    <a href="signup.html">
+	                    <a href="signup.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
 	                    </a>
 	                </li>
-	                <li>
-	                    <a href="matricular.html">
-	                        <i class="material-icons">add_to_queue</i>
-	                        <p>Matricular</p>
-	                    </a>
-	                </li>
+                        <?php
+	                echo "<li>";
+	                    echo '<a href="matricular.php">';
+	                        echo '<i class="material-icons">add_to_queue</i>';
+	                        echo '<p>Matricular</p>';
+	                    echo '</a>';
+	                echo '</li>';
+                        ?>
                         <li>
-	                    <a href="comprar.html">
+	                    <a href="comprar.php">
 	                        <i class="material-icons">add_shopping_cart</i>
 	                        <p>Comprar</p>
 	                    </a>
@@ -80,13 +77,13 @@
                         
                         
                         <li>
-	                    <a href="agenda.html">
+	                    <a href="agenda.php">
 	                        <i class="material-icons">schedule</i>
 	                        <p>Agenda</p>
 	                    </a>
 	                </li>
                         <li>
-	                    <a href="admin.html">
+	                    <a href="admin.php">
 	                        <i class="material-icons">build</i>
 	                        <p>Admin</p>
 	                    </a>
@@ -355,32 +352,32 @@
 	                <nav class="pull-left">
 	                    <ul>
 	                        <li>
-								<a href="signin.html">
+								<a href="signin.php">
 									Inicio
 								</a>
 							</li>
 							<li>
-								<a href="signup.html">
+								<a href="signup.php">
 									Registro
 								</a>
 							</li>
                                                         <li>
-								<a href="matricular.html">
+								<a href="matricular.php">
 									Matricular
 								</a>
 							</li>
                                                         <li>
-								<a href="comprar.html">
+								<a href="comprar.php">
 									Comprar
 								</a>
 							</li>
                                                         <li>
-								<a href="vitrina.html">
+								<a href="vitrina.php">
 									Vitrina
 								</a>
 							</li>
                                                         <li>
-								<a href="agenda.html">
+								<a href="agenda.php">
 									Agenda
 								</a>
 							</li>
