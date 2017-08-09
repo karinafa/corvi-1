@@ -66,12 +66,7 @@
 
 	    	<div class="sidebar-wrapper">
 	            <ul class="nav">
-                         <li>
-	                    <a href="signin.php">
-	                        <i class="material-icons">person</i>
-	                        <p>Inicio</p>
-	                    </a>
-	                </li>                      
+                                              
 	                <li>
 	                    <a href="vitrina.php">
 	                        <i class="material-icons">dashboard</i>
@@ -149,7 +144,7 @@
 							</li>
 							<li>
 								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">person</i>
+	 							   <i class="material-icons">exit_to_app</i>
 	 							   <p class="hidden-lg hidden-md">Profile</p>
 		 						</a>
 							</li>

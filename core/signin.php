@@ -60,7 +60,7 @@ $(document).ready(function() {
  
         // !!! Important !!! 
         // always return false to prevent standard browser submit and page navigation 
-        return false; 
+        return true; 
     }); 
 }); 
  
@@ -72,13 +72,21 @@ function showRequest(formData, jqForm, options) {
  
     // jqForm is a jQuery object encapsulating the form element.  To access the 
     // DOM element for the form do this: 
-    // var formElement = jqForm[0]; 
+    //var formUser = jqForm[0].value;
+    //var formPass = jqForm[1].value;
+    
+    //if (formUser == "" || formPass == "") {
+        
+    //   $('#errorum_row').show();
+    //   $('#errorum').text("Valor vacío");
+    //   return false;
+   //}
  
     //alert('About to submit: \n\n' + queryString); 
- 
+    //CL03
     // here we could return false to prevent the form from being submitted; 
     // returning anything other than false will allow the form submit to continue 
-    return true; 
+    return false; 
 } 
  
 // post-submit callback 

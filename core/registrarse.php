@@ -25,7 +25,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
  
     
-    <!--AJAX -->  
+    <!--AJAX FORM-->  
       <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
       <script src="../assets/js/jquery.form.js"></script>
         
@@ -73,7 +73,7 @@ function showRequest(formData, jqForm, options) {
     // var formElement = jqForm[0]; 
  
     //alert('About to submit: \n\n' + queryString); 
- 
+    //CL04
     // here we could return false to prevent the form from being submitted; 
     // returning anything other than false will allow the form submit to continue 
     return true; 
@@ -93,8 +93,8 @@ function showResponse(data)  {
     // is the json data object returned by the server 
  
     //alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
-      //  '\n\nThe output div should have already been updated with the responseText.'); 
-        
+     //  '\n\nThe output div should have already been updated with the responseText.'); 
+        console.log(data.message);
        $('#errorum_row').show();
        $('#errorum').text(data.message);
 } 
@@ -182,6 +182,24 @@ function showResponse(data)  {
 	                            </div>
 	                            <div class="card-content">
                                         <form id="registro" action="registrarsep.php" method="post">
+                                            <div class="row">
+                                                <div class="col-md-4">
+												<div class="form-group label-floating">
+													<label class="control-label">Correo Electrónico</label>
+													<input name="email" type="email" class="form-control" >
+												</div>
+	                                        </div>
+                                                <div class="col-md-4">
+												<div class="form-group label-floating">
+													<label class="control-label">Contraseña</label>
+													<input name="password" type="password" class="form-control" >
+												</div>
+	                                        </div>
+                                                
+                                                
+                                            </div>
+                                            
+                                            
 	                                    <div class="row">
 	                                        <div class="col-md-5">
 												<div class="form-group label-floating">
@@ -190,12 +208,7 @@ function showResponse(data)  {
 												</div>
 	                                        </div>
 	                                        
-	                                        <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Correo Electrónico</label>
-													<input name="email" type="email" class="form-control" >
-												</div>
-	                                        </div>
+	                                        
 	                                    </div>
 
 	                                    <div class="row">
@@ -235,25 +248,30 @@ function showResponse(data)  {
 													<input name="pais" type="text" class="form-control" >
 												</div>
 	                                        </div>
-	                                        <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Tarjeta de Credito</label>
-													<input name="tcredito" type="text" class="form-control" >
-												</div>
-	                                        </div>
+	                                        
 	                                    </div>
                                             <div class="row">
                                                 <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">Fecha Vencimiento</label>
-													<input name="fvenc" type="text" class="form-control" >
+												<div class="input-group">
+													<span class="input-group-addon">
+                                                                                                        <i class="material-icons">credit_card</i>
+                                                                                                        </span>
+                                                                                                        <input name="tcredito" type="text" class="form-control" placeholder="Tarjeta Credito">
 												</div>
 	                                        </div>
+                                                <div class="col-md-4">
+												<div class="form-group label-floating">
+													<label class="control-label">Fecha Vencimiento</label>
+                                                                                                        <input name="fvenc" type="month" class="form-control" >
+												</div>
+	                                        </div>
+                                                <div class="row">
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Validador</label>
 													<input name="vali" type="text" class="form-control" >
-												</div>
+                                                                                                </div>						
+                                                </div>
 	                                        </div>
                                                 
                                                 </div>
