@@ -86,7 +86,7 @@ function showRequest(formData, jqForm, options) {
     //CL03
     // here we could return false to prevent the form from being submitted; 
     // returning anything other than false will allow the form submit to continue 
-    return false; 
+    return true; 
 } 
  
 // post-submit callback 
@@ -225,7 +225,7 @@ function showResponse(data)  {
 					<div class="row">
                                                 <div class="col-md-6">
                                                         <div class="alert alert-info">
-                                                                <button type="button" aria-hidden="true" class="close">?~W</button>
+                                                                <button type="button" aria-hidden="true" class="close"><i class="material-icons">vpn_key</i></button>
                                                                 <span>Perdí mi Contraseña!</span>
                                                         </div>
                                                 </div>

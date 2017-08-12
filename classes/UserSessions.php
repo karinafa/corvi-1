@@ -17,6 +17,7 @@ class UserSessions {
     
     
     private $errconn;
+    public $email;
     
 
 public function InsertData($rut,$correo,$password,$nombre,$apellido,$direcc,$ciu,$pais,$tc,$fv,$val){
@@ -109,13 +110,25 @@ public function JsonError($error){
     
     
     
-    $error = '{ "message": "' . $error . '" }';
+    $error = '{ "message": "' . $error . '"}';
     
     return $error;
 
 }
 
-public function luhn_check($number) {
+public function JsonErrorI($error,$coderr){
+    /* Version Mejorada de JsonError para incluir codigo de error */
+    
+    $error = '{ "message": "' . $error . '", "code":"'.$coderr.'"}';
+    
+    return $error;
+    
+    
+}
+
+
+
+private function luhn_check($number) {
 
   // Strip any non-digits (useful for credit card numbers with spaces and hyphens)
   $number=preg_replace('/\D/', '', $number);
@@ -240,23 +253,36 @@ public function CheckUserLogin($user, $pwd){
 
 public function CreateSessionInDb($IDnG,$correo){
     
+    //Codificacion de Error
+    //200: No hay problema
+    ///201: Session ya Creada
+    //500: PRoblema con la insersion
+    
     $conn = $this->ConnectDb();
      //Crea un Hash del Correo Electronico
      $hcorreo = hash('ripemd160', $correo);
+     
+     
+     
+     if ($this->CheckSessionInDb($IDnG,$correo)!="302"){
      
      $sql = "INSERT INTO sesionesweb (phpsession,email) VALUES ('".$IDnG."','".$hcorreo."')";
 
     if ($conn->query($sql) === TRUE) {
                 $conn->close();
-                return $this->JsonError($IDnG.$hcorreo);
+                return $this->JsonErrorI($IDnG.$hcorreo,200);
             
         } else {
                 $this->errconn = $conn->error;
                 $conn->close();     
-                return $this->JsonError("Error: " . $sql . $this->errconn);     
+                return $this->JsonErrorI("Error: " . $sql . $this->errconn,500);     
                 }
-
-    
+     }
+    else{
+        $conn->close();
+        return $this->JsonErrorI($IDnG.$hcorreo,201);
+        
+    }
     
     
     
@@ -278,17 +304,32 @@ public function CheckSessionInDb($ID,$correo){
 
     if ($result->num_rows > 0) {
             $myerrorcode =  302;
+    }else{
+    
+    $myerrorcode =  404;
     }
-    
-    $myerrorcode =  401;
-    
     
     $conn->close();
     
     return $myerrorcode;
 }
 
+public function LogoutSession($ID,$correo){
     
+    $conn = $this->ConnectDb();
+    $hcorreo = hash('ripemd160', $correo);
+    $sql = "DELETE phpsession,email from mydb.sesionesweb where phpsession='".$ID."' and correo='".$hcorreo."'";
+    $conn->query($sql);
+    
+    
+    
+    
+    
+}
+
+
+
+
 }
 
     
