@@ -6,10 +6,80 @@ require_once '../classes/UserSessions.php';
 
 session_start();
 
-$sess = new UserSessions(); 
+/**
+ * 
+ * @Global Var
+ * 
+ */
 
+$correo = "";
+
+
+
+function SanityCheck(){
+    
+    global $correo;
+    
+if (isset($_SESSION['myemail'])){
 //desde sigin.php
-$correo = $_SESSION['myemail'];
+    
+    //echo "En sanity...";
+    
+    $correo = $_SESSION['myemail'];
+
+    return 1;
+
+    }
+        return 0;
+    }
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+
+//****
+//Valida la session contra Base de Datos
+
+function ShieldSession(){
+    
+    global $correo;
+        
+    //echo "Shield..";
+    
+      
+            $sess = new UserSessions(); 
+            //Echo "After Sanity...";
+            $Ecode =  $sess->CheckSessionInDb(session_id(),$correo);
+            //echo $Ecode;
+            
+        if ($Ecode!="302"){
+            
+            redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php");
+            
+        
+        }
+      
+           
+      
+    
+    
+    
+}
+
+/**
+ * Valida si la variablle correo esta seteada como
+ * parte de la sesion global
+ * 
+ */
+if (SanityCheck()){
+    ShieldSession();
+    }
+else{
+    redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php"); 
+}
 
 ?>
 
@@ -244,11 +314,12 @@ function showResponse(data)  {
 							<li>
                                                             <?php
                                                                 
-								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';
-	 							echo '<form id="logout" action="logout.php" method="post">';
-                                                                echo '<input type="hidden" name="email" value="'.$correo.'">';
+								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	
+                                                                
                                                                 echo '<i class="material-icons">exit_to_app</i>';
 	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
+                                                                echo '<form id="logout" action="logout.php" method="post">';
+                                                                echo '<input type="hidden" name="email" value="'.$correo.'">';
                                                                 echo '</form>';
                                                             ?>       
                                                                    

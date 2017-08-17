@@ -36,9 +36,9 @@
     // prepare the form when the DOM is ready 
 $(document).ready(function() { 
     var options = { 
-        //target:        '#errorum',   // target element(s) to be updated with server response
+        //target:        '#signin',   // target element(s) to be updated with server response
         dataType:  'json',
-        beforeSubmit:  showRequest,  // pre-submit callback 
+        //beforeSubmit:  showRequest,  // pre-submit callback 
         success:       showResponse,  // post-submit callback 
  
         // other available options: 
@@ -60,7 +60,7 @@ $(document).ready(function() {
  
         // !!! Important !!! 
         // always return false to prevent standard browser submit and page navigation 
-        return true; 
+        return false; 
     }); 
 }); 
  
@@ -102,11 +102,30 @@ function showResponse(data)  {
     // property set to 'json' then the first argument to the success callback 
     // is the json data object returned by the server 
  
-    //alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+    //alert('code: ' + data.code + '\n\nresponseText: \n' + data.message );
       //  '\n\nThe output div should have already been updated with the responseText.'); 
+       var code;
+       code = data.code;
+       
+       if ( code.localeCompare("201") && code.localeCompare("200")) {
+            $('#errorum_row').show(data.code);
+            $('#errorum').text(data.message);
+        }
+        else{
+            //alert('code: ' + data.code + '\n\nresponseText: \n' + data.message );;
+            <?php
+            echo "$(location).attr('href', 'https://".$_SERVER['SERVER_NAME']."/corvi/core/vitrina.php')";
+            
+             ?>       
+            
+        }
         
-       $('#errorum_row').show();
-       $('#errorum').text(data.message);
+        
+        
+        
+        
+        
+        
 } 
     
     
@@ -224,10 +243,12 @@ function showResponse(data)  {
 	                                </form>
 					<div class="row">
                                                 <div class="col-md-6">
+                                                    <form id="lost" action="signinp.php" method="post">
                                                         <div class="alert alert-info">
                                                                 <button type="button" aria-hidden="true" class="close"><i class="material-icons">vpn_key</i></button>
                                                                 <span>Perdí mi Contraseña!</span>
                                                         </div>
+                                                    </form>
                                                 </div>
                                         </div>
 	                            </div>

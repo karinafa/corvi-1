@@ -106,11 +106,11 @@ private function ConnectDb(){
 }
   
 
-public function JsonError($error){
+public function JsonError($error,$generic = 101){
     
     
     
-    $error = '{ "message": "' . $error . '"}';
+    $error = '{ "message": "' . $error . '", "code":"'.$generic.'"}';
     
     return $error;
 
@@ -231,19 +231,19 @@ public function CheckUserLogin($user, $pwd){
     if ($this->ValidateUser($user, $pwd)=="401"){
         
         //echo "Usuario Coincide;";
-        return $this->JsonError("Sus datos no coincide con nuestros registros");
+        return $this->JsonErrorI("Sus datos no coincide con nuestros registros","401");
         
     }
     
     if ($this->ValidateUser($user, $pwd)=="404"){
         //echo "Usuario NO registrado;";
-        return $this->JsonError("Usuario no registrado");
+        return $this->JsonErrorI("Usuario no registrado","404");
         
     }
     
      if ($this->ValidateUser($user, $pwd)=="302"){
         
-        return $this->JsonError("302");
+        return $this->JsonErrorI("Usuario Válido","302");
         
     }
     
@@ -255,7 +255,7 @@ public function CreateSessionInDb($IDnG,$correo){
     
     //Codificacion de Error
     //200: No hay problema
-    ///201: Session ya Creada
+    //201: Session ya Creada
     //500: PRoblema con la insersion
     
     $conn = $this->ConnectDb();
@@ -270,7 +270,7 @@ public function CreateSessionInDb($IDnG,$correo){
 
     if ($conn->query($sql) === TRUE) {
                 $conn->close();
-                return $this->JsonErrorI($IDnG.$hcorreo,200);
+                return $this->JsonErrorI("Insersión realizada",200);
             
         } else {
                 $this->errconn = $conn->error;
@@ -280,7 +280,7 @@ public function CreateSessionInDb($IDnG,$correo){
      }
     else{
         $conn->close();
-        return $this->JsonErrorI($IDnG.$hcorreo,201);
+        return $this->JsonErrorI("Sesión ya creada",201);
         
     }
     
@@ -316,13 +316,33 @@ public function CheckSessionInDb($ID,$correo){
 
 public function LogoutSession($ID,$correo){
     
+    // retornos
+    // 0: nada eliminado 
+    // 1: eliminado
+    //- 1 : error
+    
     $conn = $this->ConnectDb();
     $hcorreo = hash('ripemd160', $correo);
-    $sql = "DELETE phpsession,email from mydb.sesionesweb where phpsession='".$ID."' and correo='".$hcorreo."'";
+    $sql = "DELETE from mydb.sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
     $conn->query($sql);
+    $myerr = mysqli_affected_rows($conn);
+    
+    if ($myerr == 1){
+        
+    return $this->JsonErrorI("Eliminado", $myerr);}
     
     
+    if ($myerr == 0){
+        
+        return $this->JsonErrorI("No hay registros eliminados", $myerr);
+        
+    }
     
+   if ($myerr == -1){
+        
+        return $this->JsonErrorI("Error", $myerr);
+        
+    }
     
     
 }

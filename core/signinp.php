@@ -32,11 +32,11 @@ function GetUserandPass(){
      * 4)Redirije a vitrina con super ID
      * 
      */
-    echo $errormsg = $sess->CheckUserLogin($email, $pwd);
+    $errormsg = $sess->CheckUserLogin($email, $pwd);
     
     $errobj = json_decode($errormsg);
     
-    if ($errobj->{'message'}=="302") {
+    if ($errobj->{'code'}=="302") {
         // Inicia Sesion PHP
         session_start();
         //obtiene sesion
@@ -49,8 +49,11 @@ function GetUserandPass(){
         //Parsea el mensaje JSON
         $OSID = json_decode($errormsg);
         //Analiza el código de error
-        if ($OSID->{'code'}!="500")
-           redirect('https://localhost/corvi/core/vitrina.php?SID='.$OSID->{'message'}, false);
+        if ($OSID->{'code'}!="500"){
+            echo $errormsg;
+            //redirect('https://localhost/corvi/core/vitrina.php?SID='.$OSID->{'message'}, false);
+            //return 0;
+            }
         else{
             echo $errormsg; 
         }

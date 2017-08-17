@@ -19,15 +19,36 @@ function redirect($url, $statusCode = 303)
 }
 
 //Validacion de datos para terminar session
-function CheckLogout(){
+function CheckLogout($remail){
     $sess = new UserSessions(); 
     session_start();
- 
+    $ID = session_id();
+    
+    $code = $sess->LogoutSession($ID, $remail);
+    
+    
+    
+     $errors = json_decode($code);
+
+    if ($errors->{'code'}=="1"){
+        
+        // remove all session variables
+        session_unset(); 
+
+        // destroy the session 
+        session_destroy();
+        
+        //redirects
+        redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/signin.php");
+        
+    }
     
     
 }
     // PHP SESSION ID
-    $LID = $_GET['ID'];
-    echo $LID;
+    $lemail = $_POST['email'];
+    
+    
+    CheckLogout($lemail);
     
     
