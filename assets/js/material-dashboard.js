@@ -62,7 +62,7 @@ $(document).ready(function(){
 $(window).resize(function(){
     md.initSidebarsCheck();
 
-    // reset the seq for charts drawing animations
+    // reset the seq for charts drawing animation
     seq = seq2 = 0;
 
 });
