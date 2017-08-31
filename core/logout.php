@@ -7,7 +7,7 @@
  */
 
 require_once '../classes/UserSessions.php';
-
+require_once '../classes/MyErrorHandler.php';
 
 
 
@@ -21,6 +21,9 @@ function redirect($url, $statusCode = 303)
 //Validacion de datos para terminar session
 function CheckLogout($remail){
     $sess = new UserSessions(); 
+    $myerr = new MyErrorHandler();
+    $myerr->ErrorFile("test");
+    
     session_start();
     $ID = session_id();
     

@@ -17,6 +17,15 @@
 /* ANIMATION */
 /* SHADOWS */
 /* Shadows (from mdl http://www.getmdl.io/) */
+
+.baru {
+    
+    height: 18px;
+    background: green;
+    
+}
+
+
 .noUi-target,
 .noUi-target * {
   -webkit-touch-callout: none;

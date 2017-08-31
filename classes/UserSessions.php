@@ -11,6 +11,11 @@
  *
  * @author lukasalarcon
  */
+
+require_once '../classes/MyErrorHandler.php';
+
+$err = new MyErrorHandler();
+
 class UserSessions {
     
     
@@ -87,7 +92,19 @@ private function CheckDuplicate($rut,$correo){
     return 0;  
 }   
 
-
+public function GetIDforFolder($correo){
+    
+    global $err;
+    
+    $hcorreo = hash('ripemd160', $correo);
+    
+    $err->ErrorFile("GetIDforFolder - ".$correo ." ".$hcorreo);
+    
+    
+    return substr($hcorreo, 0,5);
+    
+    
+}
 
 
 private function ConnectDb(){
@@ -253,7 +270,8 @@ public function CheckUserLogin($user, $pwd){
 
 public function CreateSessionInDb($IDnG,$correo){
     
-    //Codificacion de Error
+    global $err;
+//Codificacion de Error
     //200: No hay problema
     //201: Session ya Creada
     //500: PRoblema con la insersion
@@ -261,6 +279,10 @@ public function CreateSessionInDb($IDnG,$correo){
     $conn = $this->ConnectDb();
      //Crea un Hash del Correo Electronico
      $hcorreo = hash('ripemd160', $correo);
+     
+     $err->ErrorFile("correo sesion".$correo);
+     
+     $this->email = $correo;
      
      
      
@@ -328,7 +350,8 @@ public function LogoutSession($ID,$correo){
     $myerr = mysqli_affected_rows($conn);
     
     if ($myerr == 1){
-        
+    
+    session_destroy();    
     return $this->JsonErrorI("Eliminado", $myerr);}
     
     

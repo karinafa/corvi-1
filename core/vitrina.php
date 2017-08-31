@@ -3,6 +3,8 @@
 <?php
 
 require_once '../classes/UserSessions.php';
+require_once '../classes/SearchFindShow.php';
+require_once '../classes/MyErrorHandler.php';
 
 session_start();
 
@@ -13,6 +15,7 @@ session_start();
  */
 
 $correo = "";
+$errline = new MyErrorHandler();
 
 
 
@@ -80,6 +83,51 @@ if (SanityCheck()){
 else{
     redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php"); 
 }
+
+/** FUNCIONES DE PAGINACION DE PAGINA **/
+
+$results = new SearchFindShow();
+
+// validar si existe la paginacion
+if (!(isset($_GET["pagenum"]))) 
+ { 
+
+ $pagenum = 1; 
+
+ } 
+ else
+    {
+     $pagenum = $_GET["pagenum"];
+    }
+ 
+// ESperamos los resultados de todas las casas disponibles
+// SearchFindShow
+$rows = $results->CountAllRows();
+
+// Cantidad de resultados por pagina
+$page_rows = 1;
+
+//division por pagina de resultados
+$last = ceil($rows/$page_rows);
+
+ if ($pagenum < 1) 
+ { 
+    $pagenum = 1; 
+ } 
+    elseif ($pagenum > $last) 
+ { 
+        $pagenum = $last; 
+ }  
+
+$max = 'limit ' .($pagenum) * $page_rows .',' .$page_rows; 
+
+
+$data_p = $results->DisplayPageResults($max);
+
+
+
+
+/** FIN FUNCIONES DE PAGINACION **/
 
 ?>
 
@@ -242,7 +290,7 @@ function showResponse(data)  {
 	                    </a>
 	                </li>
 	                <li>
-	                    <a href="signup.php">
+                            <a href="perfil.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
 	                    </a>
@@ -316,7 +364,7 @@ function showResponse(data)  {
                                                                 
 								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	
                                                                 
-                                                                echo '<i class="material-icons">exit_to_app</i>';
+                                                                echo '<i class="material-icons">exit_to_app</i></a>';
 	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
                                                                 echo '<form id="logout" action="logout.php" method="post">';
                                                                 echo '<input type="hidden" name="email" value="'.$correo.'">';
@@ -385,47 +433,53 @@ function showResponse(data)  {
 	                                <p class="category">Viviendas</p>
 	                            </div>
 	                            <div class="card-content table-responsive">
-	                                <table class="table">
-	                                    <thead class="text-primary">
-	                                    	<th>Características</th>
+                                        
+<?php 
+                                       
+                                            echo '<table class="table">';
+                                            
+                                            
+                                            
+	                                    echo '<thead class="text-primary">';
+	                                    	echo '<th>Características</th>';
 	                                    	
 	                                    	
-											<th>Ctn</th>
+							echo '				<th>Ctn</th>
 	                                    </thead>
 	                                    <tbody>
 	                                        <tr>
-	                                        	<td>ID</td>
+	                                        	<td>ID</td>';
 	                                        	
-												<td class="text-primary">1000</td>
-	                                        </tr>
-	                                        <tr>
-	                                        	<td>Hab</td>
+												echo '<td class="text-primary">'.$data_p["rolid"].'</td>';
+	                                        echo '</tr>
+	                                        <tr>';
+	                                        	echo '<td>Hab</td>
 	                                        	
-												<td class="text-primary">3</td>
-	                                        </tr>
-	                                        <tr>
+												<td class="text-primary">'.$data_p["dorm"].'</td>
+	                                        </tr>';
+	                                        echo '<tr>
 	                                        	<td>Baños</td>
 	                                        	
-												<td class="text-primary">2</td>
-	                                        </tr>
-	                                        <tr>
+												<td class="text-primary">'.$data_p["banos"].'</td>
+	                                        </tr>';
+	                                        echo '<tr>
 	                                        	<td>Piscina</td>
 	                                        	
-												<td class="text-primary">1</td>
-	                                        </tr>
-	                                        <tr>
+												<td class="text-primary">'.$data_p["piscina"].'</td>
+	                                        </tr>';
+	                                        echo '<tr>
 	                                        	<td>Mts2 Construidos</td>
 	                                        	
-												<td class="text-primary">100</td>
-	                                        </tr>
-	                                        <tr>
+												<td class="text-primary">'.$data_p["mtscrd"].'</td>
+	                                        </tr>';
+	                                        echo '<tr>
 	                                        	<td>Mts2 Terreno</td>
 	                                        	
-												<td class="text-primary">150</td>
+												<td class="text-primary">'.$data_p["mtscuad"].'</td>
 	                                        </tr>
 	                                    </tbody>
-	                                </table>
-
+	                                </table>';
+?>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -588,21 +642,52 @@ function showResponse(data)  {
                
                
 					<div class="collapse navbar-collapse">
+                                            
 						<form class="navbar-form nav-align-center" role="search">
-							
-                                                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                                                <i class="material-icons">fast_rewind</i><div class="ripple-container"></div>
-								
-							</button>
-                                                    
+                                                         
+                                                          <?php
                                                         
-							<button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                                            <i class="material-icons">fast_forward</i>
-                                                            <div class="ripple-container"></div>
+                                                          echo " --Página $pagenum de $last-- <p>";
+                                                          
+                                                          if ($pagenum == 1){
+                                                              
+                                                          }
+                                                          else{
+                                                              
+                                                           
+                                                                $previous = $pagenum-1;
+                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=1'><i class=\"material-icons\">fast_rewind</i>";							
+                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$previous."'><i class=\"material-icons\">fast_rewind</i>";
                                                                 
+                                                          }      
                                                             
-								
-							</button>
+                                                          
+                                                          
+                                                          if ($pagenum == $last) 
+                                                            {
+
+                                                            } 
+
+                                                                else {
+
+                                                                        $next = $pagenum+1;
+
+                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$next."'>";
+                                                                        echo "<i class=\"material-icons\">fast_forward</i></a>";
+
+                                                                        echo " ";
+
+                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$last."'>";
+                                                                        echo "<i class=\"material-icons\">fast_forward</i></a>";
+
+                                                                    } 
+                                                          
+                                                          
+                                                          
+                                                          
+                                                            
+								?>
+							
 						</form>
 					</div>
 				</div>

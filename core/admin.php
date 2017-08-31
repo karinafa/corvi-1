@@ -253,7 +253,7 @@
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Baños</label>
-													<input type="email" class="form-control" >
+													<input type="text" class="form-control" >
 												</div>
 	                                        </div>
 	                                    </div>
@@ -316,11 +316,21 @@
 												</div>
 	                                        </div>
                                                 
+                                                <div class="col-sm-4">
+                                                    <div class="form-group label-floating has-success">
+                                                    <label class="control-label">Success input</label>
+                                                    <input type="text" value="Success" class="form-control" />
+                                                        <span class="form-control-feedback">
+                                                        <i class="material-icons">done</i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
                                                 </div>
 
 	                                    
 
-	                                    <button type="submit" class="btn btn-primary pull-right">Ingresar</button>
+	                                    <button type="submit" class="btn btn-primary pull-right">Actualizar</button>
 	                                    <div class="clearfix"></div>
 	                                </form>
 	                            </div>

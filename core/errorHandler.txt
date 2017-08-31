@@ -1,0 +1,160 @@
+Thu, 31 Aug 2017 04:42:31 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:42:31 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:42:31 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:43:04 +0200 SELECT `usuario`.`rut` FROM `usuario` where `email`='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:43:04 +0200 SearhFindShow()-ActualizaBienRaiz UPDATE `braiz`
+SET
+`rolid` = 123456,
+`mtscuad` = 234 ,
+`mtscrd` = 234,
+`direccion` = 'carencia 24',
+`comuna` = 1,
+`dorm` = 2,
+`banos` = 2,
+`piscina` = 1,
+`gstocmn` = 28000,
+`impuesto` = 19,
+`ufprecio` = 1234,
+`ref` = 'picky',
+`lat` = 0,
+`lon` = 0,
+`ctcan` = 450000,
+`us` = '891230-0'
+ WHERE `rolid` = 123456
+Thu, 31 Aug 2017 04:43:04 +0200 IngresarDatosMatricula()->{ "message": "Actualizacion realizada", "code":"200"}
+Thu, 31 Aug 2017 04:44:11 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:44:11 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:44:11 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:44:19 +0200 SELECT `usuario`.`rut` FROM `usuario` where `email`='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:44:19 +0200 SearhFindShow()-ActualizaBienRaiz UPDATE `braiz`
+SET
+`rolid` = 123456,
+`mtscuad` = 234 ,
+`mtscrd` = 234,
+`direccion` = 'carencia 24',
+`comuna` = 1,
+`dorm` = 2,
+`banos` = 2,
+`piscina` = 1,
+`gstocmn` = 28000,
+`impuesto` = 19,
+`ufprecio` = 1234,
+`ref` = 'picky',
+`lat` = 0,
+`lon` = 0,
+`ctcan` = 450000,
+`us` = '891230-0'
+ WHERE `rolid` = 123456
+Thu, 31 Aug 2017 04:44:19 +0200 IngresarDatosMatricula()->{ "message": "Actualizacion realizada", "code":"200"}
+Thu, 31 Aug 2017 04:51:49 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:51:49 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:51:49 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:51:52 +0200 SELECT `usuario`.`rut` FROM `usuario` where `email`='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:51:52 +0200 SearchFindShow()->Insertabienraiz INSERT INTO `braiz`
+(
+`rolid`,
+`mtscuad`,
+`mtscrd`,
+`direccion`,
+`comuna`,
+`dorm`,
+`banos`,
+`piscina`,
+`gstocmn`,
+`impuesto`,
+`ufprecio`,
+`ref`,
+`lat`,
+`lon`,
+`ctcan`,
+`us`)
+VALUES
+(
+123456,234,123,'carencia 24',1,2,2,1,28000,19,1234,'picky',0,0,450000,'891230-0')
+Thu, 31 Aug 2017 04:51:52 +0200 IngresarDatosMatricula()->{ "message": "Insersión realizada", "code":"200"}
+Thu, 31 Aug 2017 04:52:07 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:07 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:07 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:52:23 +0200 SELECT `usuario`.`rut` FROM `usuario` where `email`='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:23 +0200 SearhFindShow()-ActualizaBienRaiz UPDATE `braiz`
+SET
+`rolid` = 123456,
+`mtscuad` = 234 ,
+`mtscrd` = 234,
+`direccion` = 'carencia 24',
+`comuna` = 1,
+`dorm` = 2,
+`banos` = 2,
+`piscina` = 1,
+`gstocmn` = 28000,
+`impuesto` = 19,
+`ufprecio` = 1234,
+`ref` = 'avenida los patos',
+`lat` = 0,
+`lon` = 0,
+`ctcan` = 450000,
+`us` = '891230-0'
+ WHERE `rolid` = 123456
+Thu, 31 Aug 2017 04:52:23 +0200 IngresarDatosMatricula()->{ "message": "Actualizacion realizada", "code":"200"}
+Thu, 31 Aug 2017 04:52:25 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:25 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:25 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:52:28 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:28 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:52:28 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:53:58 +0200 Lukas.alarcon@gmail.com
+Thu, 31 Aug 2017 04:53:58 +0200 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:53:58 +0200 ../virtual/59cdf
+Thu, 31 Aug 2017 04:53:58 +0200 1crea directorio
+Thu, 31 Aug 2017 04:54:15 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:54:15 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:54:15 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:54:15 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:54:57 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:54:57 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:55:02 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:55:02 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:55:03 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:55:03 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:55:04 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:55:04 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:55:06 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:55:06 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:55:06 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:55:06 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:55:09 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:55:09 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:55:25 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:55:25 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 04:55:25 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:55:25 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 04:59:06 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:59:06 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:59:15 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:59:15 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 04:59:18 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 04:59:18 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 05:01:55 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 05:01:55 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 05:02:00 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:00 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:00 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:00 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:34 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:34 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:34 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:34 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:42 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:42 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:42 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:42 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:48 +0200 SearchFindShow->DisplaySQLResults() SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:48 +0200 SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='Lukas.alarcon@gmail.com'
+Thu, 31 Aug 2017 05:02:48 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:02:48 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
+Thu, 31 Aug 2017 05:03:02 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 05:03:02 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 05:04:04 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 05:04:04 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
+Thu, 31 Aug 2017 05:04:05 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Thu, 31 Aug 2017 05:04:05 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
