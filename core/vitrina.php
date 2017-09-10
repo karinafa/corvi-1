@@ -103,6 +103,10 @@ if (!(isset($_GET["pagenum"])))
  else
     {
      $pagenum = $_GET["pagenum"];
+     
+     
+     
+     
     }
  
 // ESperamos los resultados de todas las casas disponibles
@@ -111,20 +115,53 @@ if (!(isset($_GET["pagenum"])))
    $errline->ErrorFile("Global value ". isset($_POST["query"]));
 if($query_flag != 1){
 $sql = "SELECT * FROM `braiz`"; 
-$rows = $results->CountAllRows($sql);
-$_SESSION['mysqlq'] = $sql;
+
+$rows = $results->CountAllRows($sql) - 1;
+
+$errline->ErrorFile("Numero de Rows Encontradas $rows");
+    
+
+
+
 }
 else{
     
+    
+        
+        
     if(isset($_POST['comuna'])) {$comuna = $_POST['comuna'];} else {$comuna="";};
     if(isset($_POST['desde'])){$desde = $_POST['desde'];} else {$desde="";};
     if(isset($_POST['hasta'])){ $hasta = $_POST['hasta'];}else {$hasta="";};    
     if(isset($_POST['dorm'])){$dorm = $_POST['dorm'];}else {$dorm="";};
     if(isset($_POST['banos'])){$banos = $_POST['banos'];}else{$banos="";};
     
+    $errline->ErrorFile("VitrinaP . Post Values ".$comuna." ".$desde." ".$hasta." ".$dorm." ".$banos);
+    
+    
+    
+    
+        
+    if(isset($_GET['comunag'])) {$comuna = $_GET['comunag'];}; 
+    if(isset($_GET['desdeg'])){$desde = $_GET['desdeg'];}; 
+    if(isset($_GET['hastag'])){ $hasta = $_GET['hastag'];};
+    if(isset($_GET['dormg'])){$dorm = $_GET['dormg'];}
+    if(isset($_GET['banosg'])){$banos = $_GET['banosg'];};
+    $errline->ErrorFile("VitrinaP . Get Values ".$comuna." ".$desde." ".$hasta." ".$dorm." ".$banos);
+    
+    
+    
+    
+    
+    
     $sql = $results->SearchEngine($comuna, $desde, $hasta, $dorm, $banos);
+    
     $rows = $results->CountAllRows($sql) - 1;
-    $_SESSION['mysqlq'] = $sql;      
+    
+    $errline->ErrorFile("Numero de Rows Encontradas $rows");
+    
+
+    
+         
 }
 
 // Cantidad de resultados por pagina
@@ -483,23 +520,23 @@ function showResponse(data)  {
 					</div>
 					<div class="collapse navbar-collapse">
                                             <form id="searcher" action="vitrina.php" method="post" class="navbar-form nav-align-center" role="search">
-							<div class="form-group  is-empty">
+							<div class="form-group">
 								<input type="text" name="comuna" value="<?php echo $comuna;?>" class="form-control" placeholder="Comuna">
 								<span class="material-input"></span>
 							</div>
-                                                        <div class="form-group  is-empty">
+                                                        <div class="form-group">
 								<input type="text" name="desde" value="<?php echo $desde;?>" class="form-control" placeholder="Desde UF">
 								<span class="material-input"></span>
 							</div>
-                                                        <div class="form-group  is-empty">
+                                                        <div class="form-group">
 								<input type="text" name="hasta" value="<?php echo $hasta;?>" class="form-control" placeholder="Hasta UF">
 								<span class="material-input"></span>
 							</div>
-                                                        <div class="form-group  is-empty">
+                                                        <div class="form-group">
 								<input type="text" name="dorm" value="<?php echo $dorm;?>" class="form-control" placeholder="Dormitorios">
 								<span class="material-input"></span>
 							</div>
-                                                    <div class="form-group  is-empty">
+                                                    <div class="form-group">
 								<input type="text" name="banos" value="<?php echo $banos;?>" class="form-control" placeholder="Baños">
 								<span class="material-input"></span>
 							</div>
@@ -556,6 +593,11 @@ function showResponse(data)  {
 	                                        	
 												<td class="text-primary">'.$data_p["piscina"].'</td>
 	                                        </tr>';
+                                                echo '<tr>
+	                                        	<td>Precio UF</td>
+	                                        	
+												<td class="text-primary">'.$data_p["ufprecio"].'</td>
+	                                        </tr>';
 	                                        echo '<tr>
 	                                        	<td>Mts2 Construidos</td>
 	                                        	
@@ -565,6 +607,11 @@ function showResponse(data)  {
 	                                        	<td>Mts2 Terreno</td>
 	                                        	
 												<td class="text-primary">'.$data_p["mtscuad"].'</td>
+	                                        </tr>';
+                                                echo '<tr>
+	                                        	<td>Comuna</td>
+	                                        	
+												<td class="text-primary">'.$data_p["comuna"].'</td>
 	                                        </tr>
 	                                    </tbody>
 	                                </table>';
@@ -754,9 +801,12 @@ function showResponse(data)  {
                                                          
                                                           <?php
                                                         
-                                                          if($query_flag!=1){$query_flag="";}else{$query_flag="?query=1?comuna=".$comuna."?desde=".$desde."?hasta=".$hasta."?dorm=".$dorm."?banos=".$banos."";};
+                                                          if($query_flag!=1){$query_flag="";}else{$query_flag="&query=1&comunag=".$comuna."&desdeg=".$desde."&hastag=".$hasta."&dormg=".$dorm."&banosg=".$banos."";};
                                                           
-                                                          echo " --Página " . $pagenum ." de " . $last ." -- <p>";
+                                                          $vpagenumber = $pagenum + 1;
+                                                          $vlast = $last + 1;
+                                                          
+                                                          echo " --Página " . $vpagenumber ." de " . $vlast ." -- <p>";
                                                           
                                                           if ($pagenum == 1){
                                                               
@@ -766,6 +816,7 @@ function showResponse(data)  {
                                                            
                                                                 $previous = $pagenum - 1;
                                                                 if ($previous < 0 ){ $previous = 0; } 
+                                       
                                                                 echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=0".$query_flag."'><i class=\"material-icons\">skip_previous</i>";							
                                                                 echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$previous.$query_flag."'><i class=\"material-icons\">fast_rewind</i>";
                                                                 
@@ -794,7 +845,7 @@ function showResponse(data)  {
 
                                                                     } 
                                                           
-                                                          
+                                                         
                                                           
                                                           
                                                             
