@@ -6,7 +6,9 @@
  * and open the template in the editor.
  */
 require_once '../classes/SearchFindShow.php';
+require_once '../classes/MyErrorHandler.php';
 
+session_start();
 
 /**
  * @input: Obtiene los datos de Formulario de Matricula
@@ -15,15 +17,22 @@ require_once '../classes/SearchFindShow.php';
 
 function GetData(){
     
+    //return
+    //404: No encontrado
+    
+    if(!isset($_POST['rol'])){
+        $error = '{ "message": "Rol no se encuentra", "code":"404"}';
+        return $error;
+    }
     
     
     if(!isset($_POST['dorm'])){
-        $error = '{ "message": "Dormitorio no se encuentra", "code":"400"}';
+        $error = '{ "message": "Dormitorio no se encuentra", "code":"404"}';
         return $error;
     }
     
     if(!isset($_POST['banos'])){
-        $error = '{ "message": "Ctd Baños no se encuentra", "code":"400"}';
+        $error = '{ "message": "Ctd Baños no se encuentra", "code":"404"}';
         return $error;
     }
     
@@ -75,13 +84,58 @@ function GetData(){
     
 }
 
+
+function GetImageData(){
+    
+    
+    //var_dump($_POST); 
+    
+    echo "Getting into GetImageData";
+        foreach($_FILES as $file) { 
+            $n = $file['name']; 
+            $s = $file['size']; 
+            if (!$n) continue; 
+             
+            return $error='{"message":"Archivo '.$n.$s.'","code":"302"}';
+        } 
+    } 
+    
+function IngresarDatosImagenes(){
+    
+    
+    
+    
+    GetImageData();
+    
+    
+    
+    
+}    
+    
+function IngresarDatosDocumentos(){
+    
+    
+    
+    
+    
+    
+}    
+    
+  
+    
+
+
+
 function IngresarDatosMatricula(){
     
+    
+    $correo = $_SESSION['myemail'];
     
     $MessErr = json_decode(GetData());
     
     if ($MessErr->{'code'}!=="400"){
 
+    $rol = $_POST['rol'];
     $mtscuad = $_POST['mtscuad'];
     $mtscrd = $_POST['mtscrd'];
     $direccion = $_POST['direccion'];
@@ -99,11 +153,25 @@ function IngresarDatosMatricula(){
     
     
     $Matricula = new SearchFindShow();
+    $NewErr = new MyErrorHandler();
     
-    $errcd = $Matricula->InsertaBienRaiz($mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan);
+    
+    
+    if ($_POST['upd'] == "0" )
+    
+    $errcd = $Matricula->InsertaBienRaiz($rol, $mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan,$correo);
+    
+        else
+        
+    $errcd = $Matricula->ActualizaBienRaiz($rol, $mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan, $correo);    
+    
+    
+    
+    
     
     $errfinal = json_decode($errcd);
     
+    $NewErr->ErrorFile("IngresarDatosMatricula()->".$errcd);
     //echo json_last_error();
     //echo json_last_error_msg();
     
@@ -135,4 +203,26 @@ function IngresarDatosMatricula(){
  * EVENTO PRINCIPAL
  */
 
-IngresarDatosMatricula();
+
+if (isset($_POST['id']))
+    
+    $i = 0;
+    
+    $i = ((int)$_POST["id"]);
+
+    switch ($i) {
+    case 0:
+        IngresarDatosMatricula();
+        break;
+    case 1:
+        IngresarDatosImagenes();
+        break;
+    case 2:
+        IngresarDatosDocumentos();
+        break;
+    
+}
+    
+    
+    
+    

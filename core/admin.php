@@ -74,7 +74,7 @@
 	                    </a>
 	                </li>
 	                <li>
-	                    <a href="signup.php">
+                            <a href="perfil.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
 	                    </a>
@@ -146,10 +146,17 @@
 								</ul>
 							</li>
 							<li>
-								<a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">exit_to_app</i>
-	 							   <p class="hidden-lg hidden-md">Profile</p>
-		 						</a>
+                                                            <?php
+                                                                
+								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	                                                 
+                                                                echo '<i class="material-icons">exit_to_app</i></a>';
+	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
+                                                                echo '<form id="logout" action="logout.php" method="post">';
+                                                                echo '<input type="hidden" name="email" value="'.$correo.'">';
+                                                                echo '</form>';
+                                                            ?>       
+                                                                   
+		 						
 							</li>
 						</ul>
 
@@ -253,7 +260,7 @@
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Baños</label>
-													<input type="email" class="form-control" >
+													<input type="text" class="form-control" >
 												</div>
 	                                        </div>
 	                                    </div>
@@ -316,11 +323,21 @@
 												</div>
 	                                        </div>
                                                 
+                                                <div class="col-sm-4">
+                                                    <div class="form-group label-floating has-success">
+                                                    <label class="control-label">Success input</label>
+                                                    <input type="text" value="Success" class="form-control" />
+                                                        <span class="form-control-feedback">
+                                                        <i class="material-icons">done</i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
                                                 </div>
 
 	                                    
 
-	                                    <button type="submit" class="btn btn-primary pull-right">Ingresar</button>
+	                                    <button type="submit" class="btn btn-primary pull-right">Actualizar</button>
 	                                    <div class="clearfix"></div>
 	                                </form>
 	                            </div>

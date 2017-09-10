@@ -1,3 +1,89 @@
+<?php
+
+require_once '../classes/SearchFindShow.php';
+require_once '../classes/UserSessions.php';
+require_once '../classes/MyErrorHandler.php';
+
+session_start();
+
+/**
+ * 
+ * @Global Var
+ * 
+ */
+
+$correo = "";
+
+
+
+function SanityCheck(){
+    
+    global $correo;
+    
+if (isset($_SESSION['myemail'])){
+//desde sigin.php
+    
+    //echo "En sanity...";
+    
+    $correo = $_SESSION['myemail'];
+
+    return 1;
+
+    }
+        return 0;
+    }
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+
+//****
+//Valida la session contra Base de Datos
+
+function ShieldSession(){
+    
+    global $correo;
+        
+    //echo "Shield..";
+    
+      
+            $sess = new UserSessions(); 
+            //Echo "After Sanity...";
+            $Ecode =  $sess->CheckSessionInDb(session_id(),$correo);
+            //echo $Ecode;
+            
+        if ($Ecode!="302"){
+            
+            redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php");
+            
+        
+        }
+      
+           
+      
+    
+    
+    
+}
+
+/**
+ * Valida si la variablle correo esta seteada como
+ * parte de la sesion global
+ * 
+ */
+if (SanityCheck()){
+    ShieldSession();
+    }
+else{
+    redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php"); 
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,6 +117,8 @@
     <!--AJAX FORM-->  
       <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
       <script src="../assets/js/jquery.form.js"></script>
+      
+      <script src="../assets/js/SimpleAjaxUploader.js"></script>
         
         <script>
         
@@ -105,7 +193,60 @@ function showResponse(data)  {
     
     </script>
     
-    
+    <script>
+    function escapeTags( str ) {
+    return String( str )
+           .replace( /&/g, '&amp;' )
+           .replace( /"/g, '&quot;' )
+           .replace( /'/g, '&#39;' )
+           .replace( /</g, '&lt;' )
+           .replace( />/g, '&gt;' );
+}
+window.onload = function() {
+  var btn = document.getElementById('uploadBtn'),
+      progressBar = document.getElementById('progressBar'),
+      progressOuter = document.getElementById('progressOuter'),
+      msgBox = document.getElementById('msgBox');
+  var uploader = new ss.SimpleUpload({
+        button: btn,
+        url: 'file_upload.php',
+        name: 'uploadfile',
+        multipart: true,
+        hoverClass: 'hover',
+        focusClass: 'focus',
+        responseType: 'json',
+        startXHR: function() {
+            progressOuter.style.display = 'block'; // make progress bar visible
+            this.setProgressBar( progressBar );
+        },
+        onSubmit: function() {
+            msgBox.innerHTML = ''; // empty the message box
+            btn.innerHTML = 'Subiendo...'; // change button text to "Uploading..."
+          },
+        onComplete: function( filename, response ) {
+            btn.innerHTML = 'Escoja otro archivo';
+            progressOuter.style.display = 'none'; // hide progress bar when upload is completed
+            if ( !response ) {
+                msgBox.innerHTML = 'Unable to upload file ';
+                return;
+            }
+            if ( response.success === true ) {
+                msgBox.innerHTML = '<strong>' + escapeTags( filename ) + '</strong>' + ' successfully uploaded.';
+            } else {
+                if ( response.msg )  {
+                    msgBox.innerHTML = escapeTags( response.msg );
+                } else {
+                    msgBox.innerHTML = 'An error occurred and the upload failed.';
+                }
+            }
+          },
+        onError: function(response) {
+            progressOuter.style.display = 'none';
+            msgBox.innerHTML = 'Unable to upload file';
+          }
+	});
+};
+</script>
     
     
     
@@ -142,7 +283,7 @@ function showResponse(data)  {
 	                    </a>
 	                </li>
 	                <li>
-	                    <a href="signup.php">
+                            <a href="perfil.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
 	                    </a>
@@ -211,11 +352,22 @@ function showResponse(data)  {
 								</ul>
 							</li>
 							<li>
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">exit_to_app</i>
-	 							   <p class="hidden-lg hidden-md">Profile</p>
-		 						</a>
+                                                            <?php
+                                                                
+								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	                                                 
+                                                                echo '<i class="material-icons">exit_to_app</i></a>';
+	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
+                                                                echo '<form id="logout" action="logout.php" method="post">';
+                                                                echo '<input type="hidden" name="email" value="'.$correo.'">';
+                                                                echo '</form>';
+                                                            ?>       
+                                                                   
+		 						
 							</li>
+                                                        
+                                                        
+                                                        
+                                                        
 						</ul>
 
 						
@@ -282,24 +434,49 @@ function showResponse(data)  {
 			</div>
 		</div>
 	</div>
-
+                        <?php
+                        $no_value = 0;
+                        $updater = new SearchFindShow();
+                        $errl = new MyErrorHandler();
+                        $sql = "
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='".$_SESSION['myemail']."'";
+                        
+                        
+                        $r = $updater->DisplaySQLResults($sql);
+                        $errl->ErrorFile($sql);
+                        if(!empty($r)){
+                            $no_value = 1;    
+                            }
+                        ?>
 	<div class="card-content">
 		<div class="tab-content">
 			<div class="tab-pane active" id="profile">
 				<div class="card-content">
                                     <form id="vdata" action="matricularp.php" method="post">
 	                                    <div class="row">
+                                                <div class="col-md-3">
+												<div class="form-group label-floating">
+													<label class="control-label">Rol</label>
+													<input type="text" name="rol" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["rolid"]:""; echo $eprint;?>">
+												</div>
+	                                        </div>
+                                                
+                                                
 	                                        <div class="col-md-5">
 												<div class="form-group label-floating">
 													<label class="control-label">Dormitorios</label>
-													<input type="text" name="dorm" class="form-control">
+													<input type="text" name="dorm" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["dorm"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Baños</label>
-													<input type="text" name="banos" class="form-control" >
+													<input type="text" name="banos" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["banos"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -308,13 +485,13 @@ function showResponse(data)  {
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Mts Superficie</label>
-													<input type="text" name="mtscuad" class="form-control" >
+													<input type="text" name="mtscuad" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["mtscuad"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
-													<label class="control-label">Mts Contruida</label>
-													<input type="text" name="mtscrd" class="form-control" >
+													<label class="control-label">Mts Construida</label>
+													<input type="text" name="mtscrd" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["mtscrd"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -323,13 +500,13 @@ function showResponse(data)  {
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Valor UF</label>
-													<input type="text" name="ufprecio" class="form-control" >
+													<input type="text" name="ufprecio" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["ufprecio"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
                                                 <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Piscina</label>
-													<input type="text" name="piscina" class="form-control" >
+													<input type="text" name="piscina" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["piscina"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -338,19 +515,19 @@ function showResponse(data)  {
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Gasto Común</label>
-													<input type="text" name="gstcmn" class="form-control" >
+													<input type="text" name="gstcmn" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["gstocmn"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Contribución Anual</label>
-													<input type="text" name="ctcan" class="form-control" >
+													<input type="text" name="ctcan" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["ctcan"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Dirección</label>
-													<input type="text" name="direccion" class="form-control" >
+													<input type="text" name="direccion" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["direccion"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -358,42 +535,100 @@ function showResponse(data)  {
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Comuna</label>
-													<input type="text" name="comuna" class="form-control" >
+													<input type="text" name="comuna" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["comuna"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Referencia</label>
-													<input type="text" name="ref" class="form-control" >
+													<input type="text" name="ref" class="form-control" value="<?php $eprint = ($no_value == 1)?$r["ref"]:""; echo $eprint;?>">
+                                                                                                        <input type="hidden" name="id" value="0">
+                                                                                                        <input type="hidden" name="upd" value="<?php $upd = ($no_value == 1)?"1":"0"; echo $upd;?>">
 												</div>
-	                                        </div>
-                                                
+	                                        </div>                                                
                                                 </div>
-
-	                                    
-
-	                                    <button type="submit" class="btn btn-primary pull-right">Ingresar</button>
+	                                    <button type="submit" class="btn btn-primary pull-right"><?php $eprint = ($no_value == 1)?"Actualizar":"Ingresar"; echo $eprint;?></button>
 	                                    <div class="clearfix"></div>
 	                                </form>
 	                            </div>
 			</div>
-			<div class="tab-pane" id="messages">
-				<div class="card card-stats ">
-                                    <div class="card-header" data-background-color="orange">
-                                        
-                                        <img src="../virtual/1000/h-w1020_h770_q80.jpg" alt="Casa" height="42" width="42">
+                    <!-- TAB -->
+                    
+                    <div class="tab-pane" id="messages">
+                            
+                                <?php    
+                                
+                                    $FolderId = New UserSessions();
+                                    
+                                    $virtualF = '../virtual/'.$FolderId->GetIDforFolder($correo);
+                                    
+                                    
+                                    if (file_exists($virtualF)){
+                                    
+                                    if ($handle = opendir($virtualF)) {
+
+                                        while (false !== ($entry = readdir($handle))) { 
+
+                                            if ($entry != "." && $entry != "..") {
+
+                                                echo '<div class="card card-stats ">';
+                                                    echo '<div class="card-header" data-background-color="orange">';                                 
+                                                            echo '<img src="../virtual/'.$FolderId->GetIDforFolder($correo)."/".$entry.'" alt="Casa" height="42" width="42">';
+                                                    echo '</div>';
+                                                echo '<div class="card-content">';
+                                                    echo '<p class="category">Espacio Usado</p>';
+                                                    echo '<h3 class="title">49/50<small>GB</small></h3>';
+                                                echo '</div>';
+					echo '</div>';
+                                            }						
+                                        }
+                                    }
+                                    }
+
+                            closedir($handle);
+                                       
+                                ?>
+                          
+                                <div class="container">
+                                
+                                <div class="row" style="padding-top:10px;">
+                                <div class="col-xs-2">
+                                <button id="uploadBtn" class="btn btn-large btn-primary">Escoja Foto</button>
+                                </div>
+                                <div class="col-xs-10">
+                                    <div id="progressOuter" class="progress progress-striped active" style="display:none;">
+                                       <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                     </div>
-                                <div class="card-content">
-                                        <p class="category">Used Space</p>
-                                        <h3 class="title">49/50<small>GB</small></h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons text-danger">warning</i> <a href="#">Get More Space...</a>
                                     </div>
                                 </div>
                                 </div>
-			</div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-xs-10">
+                                        <div id="msgBox">
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>    
+                                </div>
+			
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!-- SIGUIENTE TAB -->
+                    
+                    
+                    
 			<div class="tab-pane" id="settings">
                                 <div class="card-content table-responsive table-full-width">
                                 <table class="table">
@@ -403,8 +638,28 @@ function showResponse(data)  {
                                         
 			</thead>
 			<tbody>
+                            
 				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
+                                        <td><div class="container">
+                                
+                                <div class="row" style="padding-top:10px;">
+                                <div class="col-xs-2">
+                                <button id="uploadBtn" class="btn btn-large btn-primary">Subir</button>
+                                </div>
+                                <div class="col-xs-10">
+                                    <div id="progressOuter" class="progress progress-striped active" style="display:none;">
+                                       <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row" style="padding-top:10px;">
+                                    <div class="col-xs-10">
+                                        <div id="msgBox">
+                                        </div>
+                                    </div>
+                                </div>
+                                </div></td>
 					<td>Certificado de Hipoteca</td>
 					
 				</tr>
@@ -470,7 +725,7 @@ function showResponse(data)  {
 								</a>
 							</li>
 							<li>
-								<a href="signup.php">
+                                                            <a href="perfil.php">
 									Registro
 								</a>
 							</li>

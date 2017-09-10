@@ -1,3 +1,97 @@
+<?php
+
+require_once '../classes/UserSessions.php';
+require_once '../classes/SearchFindShow.php';
+require_once '../classes/MyErrorHandler.php';
+
+session_start();
+
+/**
+ * 
+ * @Global Var
+ * 
+ */
+
+$correo = "";
+$errline = new MyErrorHandler();
+
+
+
+function SanityCheck(){
+    
+    global $correo;
+    
+if (isset($_SESSION['myemail'])){
+//desde sigin.php
+    
+    //echo "En sanity...";
+    
+    $correo = $_SESSION['myemail'];
+
+    return 1;
+
+    }
+        return 0;
+    }
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+
+//****
+//Valida la session contra Base de Datos
+
+function ShieldSession(){
+    
+    global $correo;
+        
+    //echo "Shield..";
+    
+      
+            $sess = new UserSessions(); 
+            //Echo "After Sanity...";
+            $Ecode =  $sess->CheckSessionInDb(session_id(),$correo);
+            //echo $Ecode;
+            
+        if ($Ecode!="302"){
+            
+            redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php");
+            
+        
+        }
+      
+           
+      
+    
+    
+    
+}
+
+/**
+ * Valida si la variablle correo esta seteada como
+ * parte de la sesion global
+ * 
+ */
+if (SanityCheck()){
+    ShieldSession();
+    }
+else{
+    redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php"); 
+}
+
+/**
+ * Llamada a UserSession para Obtener los datos del perfil
+ */
+
+$up = new UserSessions();
+$data_perfil = $up->GetUserData();
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,7 +122,7 @@
     <!--AJAX FORM-->  
       <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
       <script src="../assets/js/jquery.form.js"></script>
-      <script src="../assets/js/progressbar.js"></script>
+      
         
         <script>
         
@@ -37,7 +131,7 @@
     var options = { 
         //target:        '#errorum',   // target element(s) to be updated with server response
         dataType:  'json',
-        beforeSubmit:  showRequest,  // pre-submit callback 
+        //beforeSubmit:  showRequest,  // pre-submit callback 
         success:       showResponse,  // post-submit callback 
  
         // other available options: 
@@ -52,7 +146,7 @@
     }; 
  
     // bind to the form's submit event 
-    $('#registro').submit(function() { 
+    $('#perfil').submit(function() { 
         // inside event callbacks 'this' is the DOM element so we first 
         // wrap it in a jQuery object and then invoke ajaxSubmit 
         $(this).ajaxSubmit(options); 
@@ -62,24 +156,7 @@
         return false; 
     }); 
 }); 
- 
-// pre-submit callback 
-function showRequest(formData, jqForm, options) { 
-    // formData is an array; here we use $.param to convert it to a string to display it 
-    // but the form plugin does this for you automatically when it submits the data 
-    var queryString = $.param(formData); 
- 
-    // jqForm is a jQuery object encapsulating the form element.  To access the 
-    // DOM element for the form do this: 
-    // var formElement = jqForm[0]; 
- 
-    //alert('About to submit: \n\n' + queryString); 
-    //CL04
-    // here we could return false to prevent the form from being submitted; 
-    // returning anything other than false will allow the form submit to continue 
-    return true; 
-} 
- 
+
 // post-submit callback 
 function showResponse(data)  { 
     // for normal html responses, the first argument to the success callback 
@@ -93,9 +170,9 @@ function showResponse(data)  {
     // property set to 'json' then the first argument to the success callback 
     // is the json data object returned by the server 
  
-    //alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
-     //  '\n\nThe output div should have already been updated with the responseText.'); 
-        console.log(data.message);
+    alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+       '\n\nThe output div should have already been updated with the responseText.'); 
+        //console.log(data.message);
        $('#errorum_row').show();
        $('#errorum').text(data.message);
 } 
@@ -122,24 +199,47 @@ function showResponse(data)  {
 
 			<div class="logo">
 				<a href=".." class="simple-text">
-					Corvi - Corredora Virtual
+					Corvi
 				</a>
 			</div>
 
 	    	<div class="sidebar-wrapper">
 				<ul class="nav">
 	                
-	                 <li>
-	                    <a href="signin.php">
-	                        <i class="material-icons">person</i>
-	                        <p>Inicio</p>
+	                <li>
+	                    <a href="vitrina.php">
+	                        <i class="material-icons">dashboard</i>
+	                        <p>Vitrina</p>
 	                    </a>
-	                </li>                      
-	                
+	                </li>
 	                <li class="active">
-                            <a href="registrarse.php">
-	                        <i class="material-icons">person_add</i>
-	                        <p>Registrarse</p>
+                            <a href="perfil.php">
+	                        <i class="material-icons">person</i>
+	                        <p>Perfil de Usuario</p>
+	                    </a>
+	                </li>
+	                <li>
+	                    <a href="matricular.php">
+	                        <i class="material-icons">add_to_queue</i>
+	                        <p>Matricular</p>
+	                    </a>
+	                </li>
+                        <li>
+	                    <a href="comprar.php">
+	                        <i class="material-icons">add_shopping_cart</i>
+	                        <p>Comprar</p>
+	                    </a>
+	                </li>
+                        <li>
+	                    <a href="agenda.php">
+	                        <i class="material-icons">schedule</i>
+	                        <p>Agenda</p>
+	                    </a>
+	                </li>
+                        <li>
+	                    <a href="admin.php">
+	                        <i class="material-icons">build</i>
+	                        <p>Admin</p>
 	                    </a>
 	                </li>
 		
@@ -148,6 +248,62 @@ function showResponse(data)  {
 	    </div>
 
 	    <div class="main-panel">
+                
+                <nav class="navbar navbar-transparent navbar-absolute">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Perfil de Usuario</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="material-icons">dashboard</i>
+									<p class="hidden-lg hidden-md">Dashboard</p>
+								</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="material-icons">notifications</i>
+									<span class="notification">5</span>
+									<p class="hidden-lg hidden-md">Notifications</p>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Tiene 5 nuevas solicitudes</a></li>
+                                                                        <li><a href="#">Aún falta documentación</a></li>
+									
+								</ul>
+							</li>
+							<li>
+                                                            <?php
+                                                                
+								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	                                                 
+                                                                echo '<i class="material-icons">exit_to_app</i></a>';
+	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
+                                                                echo '<form id="logout" action="logout.php" method="post">';
+                                                                echo '<input type="hidden" name="email" value="'.$correo.'">';
+                                                                echo '</form>';
+                                                            ?>       
+                                                                   
+		 						
+							</li>
+						</ul>
+
+						
+					</div>
+				</div>
+			</nav>
+                
+                
+                
+                
+                
 		
                 <div class="content">
                     <div id="errorum_row" style="display: none;" class="row">
@@ -182,12 +338,12 @@ function showResponse(data)  {
 									<p class="category">Complete su perfil</p>
 	                            </div>
 	                            <div class="card-content">
-                                        <form id="registro" action="registrarsep.php" method="post">
+                                        <form id="perfil" action="perfilp.php" method="post">
                                             <div class="row">
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Correo Electrónico</label>
-													<input name="email" type="email" class="form-control" >
+													<input name="email" type="email" class="form-control" value="<?php echo $data_perfil["email"];?>">
 												</div>
 	                                        </div>
                                                 <div class="col-md-4">
@@ -205,7 +361,7 @@ function showResponse(data)  {
 	                                        <div class="col-md-5">
 												<div class="form-group label-floating">
 													<label class="control-label">Rut</label>
-													<input name="rut" type="text" class="form-control">
+													<input name="rut" type="text" class="form-control" value="<?php echo $data_perfil["rut"];?>">
 												</div>
 	                                        </div>
 	                                        
@@ -216,13 +372,13 @@ function showResponse(data)  {
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Nombre</label>
-													<input name="nombre" type="text" class="form-control" >
+													<input name="nombre" type="text" class="form-control" value="<?php echo $data_perfil["nombre"];?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Apellido</label>
-													<input name="apellido" type="text" class="form-control" >
+													<input name="apellido" type="text" class="form-control" value="<?php echo $data_perfil["apellido"];?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -231,7 +387,7 @@ function showResponse(data)  {
 	                                        <div class="col-md-12">
 												<div class="form-group label-floating">
 													<label class="control-label">Dirección</label>
-													<input name="direccion" type="text" class="form-control" >
+													<input name="direccion" type="text" class="form-control" value="<?php echo $data_perfil["direccion"];?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -239,8 +395,26 @@ function showResponse(data)  {
 	                                    <div class="row">
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
-													<label class="control-label">Ciudad</label>
-													<input name="ciudad" type="text" class="form-control" >
+													<label class="control-label">Comuna</label>
+													
+                                                                                                        <select name="comuna">
+                                                                                                            <option value="1">Cerrillos</option>
+                                                                                                            <option value="2">Cerro Navia</option>
+                                                                                                            <option value="3">Conchalí</option>
+                                                                                                            <option value="4">El Bosque</option>
+                                                                                                            <option value="5">Estacion Central</option>
+                                                                                                            <option value="6">Huechuraba</option>
+                                                                                                            <option value="7">Independencia</option>
+                                                                                                            <option value="8">La Cisterna</option>
+                                                                                                            <option value="9">La Florida</option>
+                                                                                                            <option value="10">La Pintana</option>
+                                                                                                            <option value="11">La Granja</option>
+                                                                                                            <option value="12">La Reina</option>
+                                                                                                            <option value="13">Las Condes</option>
+                                                                                                            <option value="14">Lo Barnechea</option>
+                                                                                                   </select>
+                                                                                                        
+                                                                                                        
 												</div>
 	                                        </div>
 	                                        <div class="col-md-4">
@@ -279,30 +453,13 @@ function showResponse(data)  {
 
 	                                    
 
-	                                    <button type="submit" class="btn btn-primary pull-right">Crear Usuario</button>
+	                                    <button type="submit" class="btn btn-primary pull-right">Actualizar</button>
 	                                    <div class="clearfix"></div>
 	                                </form>
 	                            </div>
 	                        </div>
 	                    </div>
-						<div class="col-md-4">
-    						<div class="card card-profile">
-    							<div class="card-avatar">
-    								<a href="#">
-    									<img class="img" src="../assets/img/corvi.png" />
-    								</a>
-    							</div>
-
-    							<div class="content">
-    								<h6 class="category text-gray">CORVI</h6>
-    								<h4 class="card-title">Corredora Virtual</h4>
-    								<p class="card-content">
-    									 Esta opcion te permitirá reducir significativamente el costo por vender tu propiedad. Paga justo lo necesario por tu vivienda, no pagues demás!
-    								</p>
-    								<a href="#pablo" class="btn btn-primary btn-round">Follow</a>
-    							</div>
-    						</div>
-		    			</div>
+						
 	                </div>
 	            </div>
 	        </div>
