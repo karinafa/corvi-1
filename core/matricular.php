@@ -283,7 +283,7 @@ window.onload = function() {
 	                    </a>
 	                </li>
 	                <li>
-	                    <a href="signup.php">
+                            <a href="perfil.php">
 	                        <i class="material-icons">person</i>
 	                        <p>Perfil de Usuario</p>
 	                    </a>
@@ -352,11 +352,22 @@ window.onload = function() {
 								</ul>
 							</li>
 							<li>
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	 							   <i class="material-icons">exit_to_app</i>
-	 							   <p class="hidden-lg hidden-md">Profile</p>
-		 						</a>
+                                                            <?php
+                                                                
+								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	                                                 
+                                                                echo '<i class="material-icons">exit_to_app</i></a>';
+	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
+                                                                echo '<form id="logout" action="logout.php" method="post">';
+                                                                echo '<input type="hidden" name="email" value="'.$correo.'">';
+                                                                echo '</form>';
+                                                            ?>       
+                                                                   
+		 						
 							</li>
+                                                        
+                                                        
+                                                        
+                                                        
 						</ul>
 
 						
@@ -427,7 +438,14 @@ window.onload = function() {
                         $no_value = 0;
                         $updater = new SearchFindShow();
                         $errl = new MyErrorHandler();
-                        $sql = "SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan FROM braiz, usuario where email='".$_SESSION['myemail']."'";
+                        $sql = "
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='".$_SESSION['myemail']."'";
+                        
+                        
                         $r = $updater->DisplaySQLResults($sql);
                         $errl->ErrorFile($sql);
                         if(!empty($r)){
@@ -544,6 +562,9 @@ window.onload = function() {
                                     
                                     $virtualF = '../virtual/'.$FolderId->GetIDforFolder($correo);
                                     
+                                    
+                                    if (file_exists($virtualF)){
+                                    
                                     if ($handle = opendir($virtualF)) {
 
                                         while (false !== ($entry = readdir($handle))) { 
@@ -561,6 +582,7 @@ window.onload = function() {
 					echo '</div>';
                                             }						
                                         }
+                                    }
                                     }
 
                             closedir($handle);

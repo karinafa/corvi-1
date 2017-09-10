@@ -39,12 +39,10 @@ function __construct() {
     
    }
    
-public function CountAllRows(){
+public function CountAllRows($sql){
     
     global $err;
 
-    $sql = "SELECT * FROM `braiz`";
-    
     $err->ErrorFile("SearchFindShow->CountAllRows() ".$sql);
     
     $result = $this->conn->query($sql);
@@ -81,6 +79,25 @@ public function DisplayPageResults($max){
     
     //retorna arreglo  
 }
+
+
+public function DisplayPageResultswithMax($sql,$max){
+    
+    
+    global $err;
+
+    $sql = $sql." ".$max;
+    
+    $err->ErrorFile("SearchFindShow->DisplayPageResultswithMax() ".$sql);
+    
+    $data_p = $this->conn->query($sql);
+    
+    return $data_p->fetch_array(MYSQLI_ASSOC);
+    
+    
+    
+}
+
 
 
 public function DisplaySQLResults($sql){
@@ -233,8 +250,8 @@ public function InsertaBienRaiz($rol,$mtscuad,$mtscrd,$direccion,$comuna,$dorm,$
 `ref`,
 `lat`,
 `lon`,
-`ctcan`,
-`us`)
+`ctcan`
+)
 VALUES
 (
 ".$rol.",".
@@ -251,12 +268,13 @@ $ufprecio.",'".
 $ref."',".
 $lat.",".
 $lon.",".
-$ctcan.",'".
-$rutID."')";         
+$ctcan."); ";
+
+$sql2="INSERT INTO braizperuser (fk_rut,fk_rolid) VALUES('".$rutID."',".$rol.")";  
   
- $err->ErrorFile("SearchFindShow()->Insertabienraiz ".$sql);  
+ $err->ErrorFile("SearchFindShow()->Insertabienraiz ".$sql.$sql2);  
   
-   if ($this->conn->query($sql) > 0) {
+   if ($this->conn->query($sql) > 0 && $this->conn->query($sql2) > 0) {
                 $this->conn->close();
                 return $this->JsonErrorI("Insersión realizada",200);
             
@@ -281,6 +299,76 @@ public function JsonErrorI($error,$coderr){
     
 }
     
+
+public function SearchEngine($comuna,$desde,$hasta,$dorm,$banos){
+    
+    $i = -1;
+    
+    
+     if ( $comuna == "" && $desde == ""  && $hasta == "" &&  $desde == "" && $banos != "" ){
+        
+        $i = 0;
+    }
+    
+    
+    
+    if (is_null($comuna) && is_null($desde) && is_null($hasta) && is_null($dorm) && is_null($banos)){
+        
+        return $this->JsonErrorI("Debe colocar una opcion", 500);
+        
+    }
+    
+    //**if (!is_null($comuna) && !is_null($desde) && !is_null($hasta) && !is_null($dorm) && !is_null($banos)){
+        
+    //    $i = 8;
+        
+    //}
+    
+    //if (!is_null($comuna) && is_null($desde) && is_null($hasta) && is_null($dorm) && is_null($banos) ){
+        
+      //  $i = 2;
+    //}
+    
+    
+    
+    
+    
+    switch ($i) {
+        
+    case 0:
+        $sql = "SELECT * FROM braiz where banos=".$banos;
+    break;           
+    case 1:
+        $sql = "SELECT * FROM braiz where dorm=".$dorm;
+    break;
+    case 2:
+        $sql = "SELECT * FROM braiz where comuna=".$comuna;
+        break;       
+    case 3:
+        $sql = "SELECT * FROM braiz where ufprecio > ".$desde;
+        break;            
+    case 4:
+        $sql = "SELECT * FROM braiz where ufprecio > ".$desde." and ufprecio < ".$hasta." ";
+        break;          
+    case 5:
+        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde." and ufprecio < ".$hasta."";
+        break;   
+    case 6:
+        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde."and ufprecio < ".$hasta."";
+        break;
+    case 7:
+        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde." and ufprecio < ".$hasta." and dorm=".$dorm."";
+        break;
+    case 8:
+        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde." and ufprecio < ".$hasta." and dorm=".$dorm." and banos=".$banos."";
+        break;
+}
+    
+    
+    
+    return $sql;
+    
+}
 
     
     

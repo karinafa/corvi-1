@@ -1,4 +1,4 @@
-<!doctype html>
+
 
 <?php
 
@@ -87,12 +87,17 @@ else{
 /** FUNCIONES DE PAGINACION DE PAGINA **/
 
 $results = new SearchFindShow();
-
+$comuna = "";
+$desde = "";
+$hasta = "";
+$banos = "";
+$dorm = "";
+$query_flag = "";
 // validar si existe la paginacion
 if (!(isset($_GET["pagenum"]))) 
  { 
 
- $pagenum = 1; 
+ $pagenum = 0; 
 
  } 
  else
@@ -102,7 +107,25 @@ if (!(isset($_GET["pagenum"])))
  
 // ESperamos los resultados de todas las casas disponibles
 // SearchFindShow
-$rows = $results->CountAllRows();
+   if(isset($_POST["query"])){$query_flag =  $_POST["query"];};
+   $errline->ErrorFile("Global value ". isset($_POST["query"]));
+if($query_flag != 1){
+$sql = "SELECT * FROM `braiz`"; 
+$rows = $results->CountAllRows($sql);
+$_SESSION['mysqlq'] = $sql;
+}
+else{
+    
+    if(isset($_POST['comuna'])) {$comuna = $_POST['comuna'];} else {$comuna="";};
+    if(isset($_POST['desde'])){$desde = $_POST['desde'];} else {$desde="";};
+    if(isset($_POST['hasta'])){ $hasta = $_POST['hasta'];}else {$hasta="";};    
+    if(isset($_POST['dorm'])){$dorm = $_POST['dorm'];}else {$dorm="";};
+    if(isset($_POST['banos'])){$banos = $_POST['banos'];}else{$banos="";};
+    
+    $sql = $results->SearchEngine($comuna, $desde, $hasta, $dorm, $banos);
+    $rows = $results->CountAllRows($sql) - 1;
+    $_SESSION['mysqlq'] = $sql;      
+}
 
 // Cantidad de resultados por pagina
 $page_rows = 1;
@@ -110,28 +133,40 @@ $page_rows = 1;
 //division por pagina de resultados
 $last = ceil($rows/$page_rows);
 
+//$pagenum < 1
+
+
+
  if ($pagenum < 1) 
  { 
-    $pagenum = 1; 
- } 
+    $pagenum = 0;
+    
+     }
+ 
     elseif ($pagenum > $last) 
  { 
-        $pagenum = $last; 
+        $pagenum = $last - 1; 
  }  
 
+ 
+ //if ($pagenum == 1) { $pagenum = $pagenum - 1 ;}
+ 
 $max = 'limit ' .($pagenum) * $page_rows .',' .$page_rows; 
 
 
-$data_p = $results->DisplayPageResults($max);
+if($query_flag != 1){
+$data_p = $results->DisplayPageResults($max);}
+else{
+    $data_p = $results->DisplayPageResultswithMax($sql, $max);
+}
 
 
-
-
+   
 /** FIN FUNCIONES DE PAGINACION **/
 
 ?>
 
-
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -258,6 +293,61 @@ function showResponse(data)  {
     
     
     </script>
+   
+    <script>
+// this is the class of the submit button
+    $(document).ready(function() { 
+    var options = { 
+        //target:        '#logout',   // target element(s) to be updated with server response
+        dataType:  'json',
+         // pre-submit callback 
+        success:       showResponse,  // post-submit callback 
+ 
+        // other available options: 
+        //url:       url         // override for form's 'action' attribute 
+        //type:      type        // 'get' or 'post', override for form's 'method' attribute 
+        //dataType:  json        // 'xml', 'script', or 'json' (expected server response type) 
+        //clearForm: true        // clear all form fields after successful submit 
+        //resetForm: true        // reset the form after successful submit 
+ 
+        // $.ajax options can be used here too, for example: 
+        //timeout:   3000 
+    }; 
+ 
+    // bind to the form's submit event 
+    $('#searcher').submit(function() { 
+        // inside event callbacks 'this' is the DOM element so we first 
+        // wrap it in a jQuery object and then invoke ajaxSubmit 
+        $(this).ajaxSubmit(options); 
+ 
+        // !!! Important !!! 
+        // always return false to prevent standard browser submit and page navigation 
+        return false; 
+    }); 
+}); 
+    
+    
+    
+    function showResponse(data)  { 
+    // for normal html responses, the first argument to the success callback 
+    // is the XMLHttpRequest object's responseText property 
+ 
+    // if the ajaxSubmit method was passed an Options Object with the dataType 
+    // property set to 'xml' then the first argument to the success callback 
+    // is the XMLHttpRequest object's responseXML property 
+ 
+    // if the ajaxSubmit method was passed an Options Object with the dataType 
+    // property set to 'json' then the first argument to the success callback 
+    // is the json data object returned by the server 
+ 
+    //alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
+     //  '\n\nThe output div should have already been updated with the responseText.'); 
+        console.log(data.message);
+       $('#errorum_row').show();
+       $('#errorum').text(data.message);
+} 
+    
+    </script>
     
     
     
@@ -362,8 +452,7 @@ function showResponse(data)  {
 							<li>
                                                             <?php
                                                                 
-								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	
-                                                                
+								echo '<a href="#" onclick="document.getElementById(\'logout\').submit()" class="dropdown-toggle" data-toggle="dropdown">';	 	                                                 
                                                                 echo '<i class="material-icons">exit_to_app</i></a>';
 	 							echo '<p class="hidden-lg hidden-md">Salir</p>';
                                                                 echo '<form id="logout" action="logout.php" method="post">';
@@ -393,28 +482,28 @@ function showResponse(data)  {
 						
 					</div>
 					<div class="collapse navbar-collapse">
-						<form class="navbar-form nav-align-center" role="search">
+                                            <form id="searcher" action="vitrina.php" method="post" class="navbar-form nav-align-center" role="search">
 							<div class="form-group  is-empty">
-								<input type="text" class="form-control" placeholder="Comuna">
+								<input type="text" name="comuna" value="<?php echo $comuna;?>" class="form-control" placeholder="Comuna">
 								<span class="material-input"></span>
 							</div>
                                                         <div class="form-group  is-empty">
-								<input type="text" class="form-control" placeholder="Desde UF">
+								<input type="text" name="desde" value="<?php echo $desde;?>" class="form-control" placeholder="Desde UF">
 								<span class="material-input"></span>
 							</div>
                                                         <div class="form-group  is-empty">
-								<input type="text" class="form-control" placeholder="Hasta UF">
+								<input type="text" name="hasta" value="<?php echo $hasta;?>" class="form-control" placeholder="Hasta UF">
 								<span class="material-input"></span>
 							</div>
                                                         <div class="form-group  is-empty">
-								<input type="text" class="form-control" placeholder="Dormitorios">
+								<input type="text" name="dorm" value="<?php echo $dorm;?>" class="form-control" placeholder="Dormitorios">
 								<span class="material-input"></span>
 							</div>
                                                     <div class="form-group  is-empty">
-								<input type="text" class="form-control" placeholder="Baños">
+								<input type="text" name="banos" value="<?php echo $banos;?>" class="form-control" placeholder="Baños">
 								<span class="material-input"></span>
 							</div>
-                                                    
+                                                        <input type="hidden" name="query" value="1">
 							<button type="submit" class="btn btn-white btn-round btn-just-icon">
 								<i class="material-icons">search</i><div class="ripple-container"></div>
 							</button>
@@ -506,27 +595,45 @@ function showResponse(data)  {
                                             
 	                                    <tbody>
 	                                        <tr>
-	                                        	<td><figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                                            <a href="../virtual/1000/MC7541660-0.jpg" itemprop="contentUrl" data-size="400x200">
-                                                            <img src="../virtual/1000/MC7541660-0.jpg" itemprop="thumbnail" alt="Desrripción de Imagen" />
-                                                            </a>
-                                                            <figcaption itemprop="caption description">Imagen 1</figcaption>
-                                                            </figure>
-                                                            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                                            <a href="../virtual/1000/victorian.jpg" itemprop="contentUrl" data-size="400x200">
-                                                            <img src="../virtual/1000/victorian.jpg" itemprop="thumbnail" alt="Descripción de Imagen" />
-                                                            </a>
-                                                            <figcaption itemprop="caption description">Imagen 2</figcaption>
-                                                            </figure>
-                                                            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                                            <a href="../virtual/1000/victorian.jpg" itemprop="contentUrl" data-size="400x200">
-                                                            <img src="../virtual/1000/victorian.jpg" itemprop="thumbnail" alt="Descripción de Imagen" />
-                                                            </a>
-                                                            <figcaption itemprop="caption description">Imagen 3</figcaption>
-                                                            </figure>
-                                                        </td>
-	                                        	
-												
+                                                    <?php
+                                                    
+                                                    echo "<td>";
+                                                    
+                                                    $FolderId = New UserSessions();
+                                                    
+                                                    $GetMail = New SearchFindShow();
+                                                    
+                                                    $GetMailID= $GetMail->DisplaySQLResults("SELECT email from (( braizperuser
+                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
+                                                    ) where braizperuser.fk_rolid = ".$data_p["rolid"]);
+                                                    
+                                                    $errline->ErrorFile("Vitrina - ".$GetMailID["email"]);
+                                    
+                                                    $virtualF = '../virtual/'.$FolderId->GetIDforFolder($GetMailID["email"]);
+                                                    
+                                                    
+                                                    if (file_exists($virtualF)){
+                                                    
+                                    
+                                                    if ($handle = opendir($virtualF)) {
+
+                                                        while (false !== ($entry = readdir($handle))) { 
+
+                                                            if ($entry != "." && $entry != ".." && $entry != ".DS_Store") {
+              	
+                                                            echo '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
+                                                            echo '<a href="'.$virtualF."/".$entry.'" itemprop="contentUrl" data-size="400x200">';
+                                                            echo '<img src="'.$virtualF."/".$entry.'" itemprop="thumbnail" alt="Desrripción de Imagen" />';
+                                                            echo '</a>';
+                                                            echo '<figcaption itemprop="caption description">'.$entry.'</figcaption>';
+                                                            echo '</figure>';             
+                                                        
+                                                            }
+                                                        }      
+                                                     }
+                                                    }
+                                                    echo '</td>';        
+							?>					
 	                                        </tr>
 	                                        <tr>
 	                                        	<td>
@@ -647,7 +754,9 @@ function showResponse(data)  {
                                                          
                                                           <?php
                                                         
-                                                          echo " --Página $pagenum de $last-- <p>";
+                                                          if($query_flag!=1){$query_flag="";}else{$query_flag="?query=1?comuna=".$comuna."?desde=".$desde."?hasta=".$hasta."?dorm=".$dorm."?banos=".$banos."";};
+                                                          
+                                                          echo " --Página " . $pagenum ." de " . $last ." -- <p>";
                                                           
                                                           if ($pagenum == 1){
                                                               
@@ -655,9 +764,10 @@ function showResponse(data)  {
                                                           else{
                                                               
                                                            
-                                                                $previous = $pagenum-1;
-                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=1'><i class=\"material-icons\">fast_rewind</i>";							
-                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$previous."'><i class=\"material-icons\">fast_rewind</i>";
+                                                                $previous = $pagenum - 1;
+                                                                if ($previous < 0 ){ $previous = 0; } 
+                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=0".$query_flag."'><i class=\"material-icons\">skip_previous</i>";							
+                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$previous.$query_flag."'><i class=\"material-icons\">fast_rewind</i>";
                                                                 
                                                           }      
                                                             
@@ -670,15 +780,17 @@ function showResponse(data)  {
 
                                                                 else {
 
-                                                                        $next = $pagenum+1;
+                                                                        $next = $pagenum + 1;
+                                                                        
+                                                                        if ($pagenum == $last){ $next = $last - 1; }
 
-                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$next."'>";
+                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$next.$query_flag."'>";
                                                                         echo "<i class=\"material-icons\">fast_forward</i></a>";
 
                                                                         echo " ";
 
-                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$last."'>";
-                                                                        echo "<i class=\"material-icons\">fast_forward</i></a>";
+                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=". ($last - 1) .$query_flag."'>";
+                                                                        echo "<i class=\"material-icons\">skip_next</i></a>";
 
                                                                     } 
                                                           

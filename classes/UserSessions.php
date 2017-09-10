@@ -79,7 +79,7 @@ private function CheckDuplicate($rut,$correo){
     
     
     $conn = $this->ConnectDb();
-    $sql = "SELECT rut, email from mydb.usuario where rut='".$rut."' or email='".$correo."'";
+    $sql = "SELECT rut, email from usuario where rut='".$rut."' or email='".$correo."'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -217,14 +217,14 @@ private function ValidateUser($user, $pwd){
     $conn = $this->ConnectDb();
     
     // Validación de correo y password
-    $sql = "SELECT email from mydb.usuario where email='".$user."' and pass='".$pwd."'";
+    $sql = "SELECT email from usuario where email='".$user."' and pass='".$pwd."'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
             return 302;
     }
     // Validación de correo
-    $sql = "SELECT email from mydb.usuario where email='".$user."'";
+    $sql = "SELECT email from usuario where email='".$user."'";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
@@ -321,7 +321,7 @@ public function CheckSessionInDb($ID,$correo){
     $conn = $this->ConnectDb();
     $hcorreo = hash('ripemd160', $correo);
     // Validación de correo y password
-    $sql = "SELECT phpsession,email from mydb.sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
+    $sql = "SELECT phpsession,email from sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -345,7 +345,7 @@ public function LogoutSession($ID,$correo){
     
     $conn = $this->ConnectDb();
     $hcorreo = hash('ripemd160', $correo);
-    $sql = "DELETE from mydb.sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
+    $sql = "DELETE from sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
     $conn->query($sql);
     $myerr = mysqli_affected_rows($conn);
     
@@ -366,6 +366,63 @@ public function LogoutSession($ID,$correo){
         return $this->JsonErrorI("Error", $myerr);
         
     }
+    
+    
+}
+
+
+public function UpdateUserData($rut,$password,$nombre,$apellido,$fec_nac,$direccion,$comuna,$comprador,$vendedor,$admin){
+    
+$conn = $this->ConnectDb();
+$sql = "
+UPDATE usuario`
+SET
+`pass` = '".$password . "',
+`nombre` ='".$nombre."',
+`apellido` = '".$apellido."',
+`fec_nac` = ".$fec_nac.",
+`direccion` = '".$direccion."',
+`comuna`=".$comuna.",
+`comprador` =".$comprador.",
+`vendedor` =".$vendedor.",
+`admin` = ".$admin.",
+WHERE `rut` ='".$rut."'";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+    
+        $conn->close();
+        
+        return $this->JsonErrorI("Actualizacion Realizada", 302);
+        
+    
+    }
+    
+    return $this->JsonErrorI("No se pudo actualizar los datos", 500);
+    
+    
+    
+    
+}
+
+
+public function GetUserData(){
+    
+    
+     global $err;
+     
+    $conn = $this->ConnectDb(); 
+     
+    $sql = "SELECT * FROM usuario"; 
+
+    $err->ErrorFile("UserSession-GetUSerData ".$sql);
+    
+    $data_p = $conn->query($sql);
+    
+    return $data_p->fetch_array(MYSQLI_ASSOC);
+    
+
     
     
 }
