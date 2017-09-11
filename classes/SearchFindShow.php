@@ -379,19 +379,19 @@ public function SearchEngine($comuna,$desde,$hasta,$dorm,$banos){
         $sql = "SELECT * FROM braiz where comuna=".$lcomuna;
         break;       
     case 3:
-        $sql = "SELECT * FROM braiz where ufprecio > ".(string)$ldesde;
+        $sql = "SELECT * FROM braiz where ufprecio >= ".(string)$ldesde;
         break;            
     case 4:
-        $sql = "SELECT * FROM braiz where ufprecio > ".$ldesde." and ufprecio < ".$lhasta." ";
+        $sql = "SELECT * FROM braiz where ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta." ";
         break;          
     case 5:
-        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio > ".$ldesde." and ufprecio < ".$lhasta."";
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta."";
         break;   
     case 6:
-        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio > ".$ldesde." and ufprecio < ".$lhasta." and dorm=".$ldorm."";
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta." and dorm=".$ldorm."";
         break;
     case 7:
-        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio > ".$ldesde." and ufprecio < ".$lhasta." and dorm=".$ldorm." and banos=".$lbanos."";
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta." and dorm=".$ldorm." and banos=".$lbanos."";
         break;
 }
     

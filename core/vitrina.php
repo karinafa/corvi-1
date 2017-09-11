@@ -112,6 +112,9 @@ if (!(isset($_GET["pagenum"])))
 // ESperamos los resultados de todas las casas disponibles
 // SearchFindShow
    if(isset($_POST["query"])){$query_flag =  $_POST["query"];};
+   
+   if(isset($_GET["query"])){$query_flag =  $_GET["query"];};
+   
    $errline->ErrorFile("Global value ". isset($_POST["query"]));
 if($query_flag != 1){
 $sql = "SELECT * FROM `braiz`"; 
@@ -146,6 +149,7 @@ else{
     if(isset($_GET['hastag'])){ $hasta = $_GET['hastag'];};
     if(isset($_GET['dormg'])){$dorm = $_GET['dormg'];}
     if(isset($_GET['banosg'])){$banos = $_GET['banosg'];};
+    if(isset($_GET['query'])){$query_flag = $_GET['query'];};
     $errline->ErrorFile("VitrinaP . Get Values ".$comuna." ".$desde." ".$hasta." ".$dorm." ".$banos);
     
     
@@ -808,7 +812,7 @@ function showResponse(data)  {
                                                           
                                                           echo " --Página " . $vpagenumber ." de " . $vlast ." -- <p>";
                                                           
-                                                          if ($pagenum == 1){
+                                                          if ($pagenum == 0){
                                                               
                                                           }
                                                           else{
