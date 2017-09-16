@@ -302,12 +302,57 @@ public function JsonErrorI($error,$coderr){
 
 public function SearchEngine($comuna,$desde,$hasta,$dorm,$banos){
     
+    
+    global $err;
+    $lcomuna = $comuna;
+    $ldesde = $desde;
+    $lhasta = $hasta;
+    $ldorm = $dorm;
+    $lbanos = $banos;
+    
+    
+    
     $i = -1;
     
     
      if ( $comuna == "" && $desde == ""  && $hasta == "" &&  $desde == "" && $banos != "" ){
         
         $i = 0;
+    }
+    
+    if ( $comuna == "" && $desde == ""  && $hasta == "" && $banos == "" && $dorm != "" ){
+        
+        $i = 1;
+    }
+    
+    if ( $comuna =! "" && $desde == ""  && $hasta == "" && $banos == "" && $dorm == "" ){
+        
+        $i = 2;
+    }
+    
+     if ( $comuna == "" && $desde =! ""  && $hasta == "" && $banos == "" && $dorm == "" ){
+        
+        $i = 3;
+    }
+    
+     if ( $comuna == "" && $desde =! ""  && $hasta != "" && $banos == "" && $dorm == "" ){
+        
+        $i = 4;
+    }
+    
+     if ( $comuna != "" && $desde =! ""  && $hasta != "" && $banos == "" && $dorm == "" ){
+        
+        $i = 5;
+    }
+    
+      if ( $comuna != "" && $desde =! ""  && $hasta != "" && $banos == "" && $dorm != "" ){
+        
+        $i = 6;
+    }
+    
+    if ( $comuna != "" && $desde =! ""  && $hasta != "" && $banos != "" && $dorm != "" ){
+        
+        $i = 7;
     }
     
     
@@ -318,54 +363,40 @@ public function SearchEngine($comuna,$desde,$hasta,$dorm,$banos){
         
     }
     
-    //**if (!is_null($comuna) && !is_null($desde) && !is_null($hasta) && !is_null($dorm) && !is_null($banos)){
-        
-    //    $i = 8;
-        
-    //}
-    
-    //if (!is_null($comuna) && is_null($desde) && is_null($hasta) && is_null($dorm) && is_null($banos) ){
-        
-      //  $i = 2;
-    //}
-    
-    
+    $err->ErrorFile("SearchEngine $comuna $desde $hasta $dorm, $banos");
     
     
     
     switch ($i) {
         
     case 0:
-        $sql = "SELECT * FROM braiz where banos=".$banos;
+        $sql = "SELECT * FROM braiz where banos=".$lbanos;
     break;           
     case 1:
-        $sql = "SELECT * FROM braiz where dorm=".$dorm;
+        $sql = "SELECT * FROM braiz where dorm=".$ldorm;
     break;
     case 2:
-        $sql = "SELECT * FROM braiz where comuna=".$comuna;
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna;
         break;       
     case 3:
-        $sql = "SELECT * FROM braiz where ufprecio > ".$desde;
+        $sql = "SELECT * FROM braiz where ufprecio >= ".(string)$ldesde;
         break;            
     case 4:
-        $sql = "SELECT * FROM braiz where ufprecio > ".$desde." and ufprecio < ".$hasta." ";
+        $sql = "SELECT * FROM braiz where ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta." ";
         break;          
     case 5:
-        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde." and ufprecio < ".$hasta."";
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta."";
         break;   
     case 6:
-        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde."and ufprecio < ".$hasta."";
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta." and dorm=".$ldorm."";
         break;
     case 7:
-        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde." and ufprecio < ".$hasta." and dorm=".$dorm."";
-        break;
-    case 8:
-        $sql = "SELECT * FROM braiz where comuna=".$comuna." and ufprecio > ".$desde." and ufprecio < ".$hasta." and dorm=".$dorm." and banos=".$banos."";
+        $sql = "SELECT * FROM braiz where comuna=".$lcomuna." and ufprecio >= ".$ldesde." and ufprecio <= ".$lhasta." and dorm=".$ldorm." and banos=".$lbanos."";
         break;
 }
     
     
-    
+    $err->ErrorFile("SearchEngine Final Query: $sql");
     return $sql;
     
 }
