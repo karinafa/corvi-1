@@ -15,6 +15,8 @@ session_start();
  * @return Jcode
  */
 
+
+// INICIO FUNCION GETDATA
 function GetData(){
     
     //return
@@ -83,8 +85,10 @@ function GetData(){
     
     
 }
+//FIN FUNCION GETDATA
 
 
+//INICIO FUNCION GETIMAGE DATA
 function GetImageData(){
     
     
@@ -98,8 +102,12 @@ function GetImageData(){
              
             return $error='{"message":"Archivo '.$n.$s.'","code":"302"}';
         } 
-    } 
+} 
+
+//FIN FUNCION GETIMAGE DATA
+
     
+// INICIO FUNCION INGRESAR IMAGENES
 function IngresarDatosImagenes(){
     
     
@@ -110,7 +118,9 @@ function IngresarDatosImagenes(){
     
     
     
-}    
+}  
+//FIN FUNCION INGRESAR IMAGENES
+
     
 function IngresarDatosDocumentos(){
     
@@ -125,13 +135,16 @@ function IngresarDatosDocumentos(){
     
 
 
-
+//INICIO INGRESAR DATOS MATRICULA
 function IngresarDatosMatricula(){
     
+    $NewErr = new MyErrorHandler();
     
     $correo = $_SESSION['myemail'];
     
     $MessErr = json_decode(GetData());
+
+    $NewErr->ErrorFile("Dato no Encontrado".$MessErr->{'message'});
     
     if ($MessErr->{'code'}!=="400"){
 
@@ -153,19 +166,23 @@ function IngresarDatosMatricula(){
     
     
     $Matricula = new SearchFindShow();
-    $NewErr = new MyErrorHandler();
     
     
+    
+    $NewErr->ErrorFile("Matricularp - Valor UPD".$_POST['upd']);    
     
     if ($_POST['upd'] == "0" )
-    
-    $errcd = $Matricula->InsertaBienRaiz($rol, $mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan,$correo);
-    
-        else
+        {
+            $NewErr->ErrorFile("AJAX CALL INSERTAR".$rol.$banos);  
+            $errcd = $Matricula->InsertaBienRaiz($rol, $mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan,$correo);
+        }
+            else
+                {
         
-    $errcd = $Matricula->ActualizaBienRaiz($rol, $mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan, $correo);    
+                $NewErr->ErrorFile("AJAX CALL ACTUALIZAR".$rol.$banos);       
+                $errcd = $Matricula->ActualizaBienRaiz($rol, $mtscuad, $mtscrd, $direccion, $comuna, $dorm, $banos, $piscina, $gstcmn, $impuesto, $ufprecio, $ref, $lat, $lon, $ctcan, $correo);    
     
-    
+                }
     
     
     
@@ -174,37 +191,45 @@ function IngresarDatosMatricula(){
     $NewErr->ErrorFile("IngresarDatosMatricula()->".$errcd);
     //echo json_last_error();
     //echo json_last_error_msg();
+  
+      $NewErr->ErrorFile("IngresarDatosMatricula() Cod Err->".$errfinal->{'code'});
     
+    $msgfinal = $errfinal->{'code'};
     
-    
-    if ($errfinal->{'code'}=="500"){
-        
-            echo $error = '{ "message": "' . $errfinal->{'message'}. '", "code":"500"}';
-        
-        }
-        else {
-        
-                echo $error = '{ "message": "Registros Insertados", "code":"302"}';
-        
-             }
-    
-    }
-        else{
-            
+        switch ((int)$msgfinal) {
+    case 500:
+        $NewErr->ErrorFile("IngresarDatosMatricula() Cod Err Sw 500");
+        echo '{ "message": "' . $errfinal->{'message'}. '", "code":"500"}';
+        break;
+    case 302:
+        $NewErr->ErrorFile("IngresarDatosMatricula() Cod Err Sw 302");
+        echo '{ "message": "Registros Insertados", "code":"302"}';
+        break;
+    case 400:
+        $NewErr->ErrorFile("IngresarDatosMatricula() Cod Err Sw-> 400");
         echo '{ "message": "Faltan Datos para completar", "code":"400"}';
-        }
-    
-    
+        break;
+    case 200:   
+        echo $mycode = '{ "message": "Actualizacion Realizada", "code":"200"}';
+        break;
+    default:
+        $NewErr->ErrorFile("IngresarDatosMatricula() Cod Err SW-> Default");
+        echo '{ "message": "No se determina el error", "code":"100"}';
+    }
+        
+        
     
 }
-
+//FIN IF
+}
+//FIN INGRESAR DATOS MATRICULA
 
 /**
  * EVENTO PRINCIPAL
  */
 
 
-if (isset($_POST['id']))
+if (isset($_POST['id'])){
     
     $i = 0;
     
@@ -221,8 +246,9 @@ if (isset($_POST['id']))
         IngresarDatosDocumentos();
         break;
     
-}
-    
-    
-    
+    }
+}   
+
+   
+ 
     

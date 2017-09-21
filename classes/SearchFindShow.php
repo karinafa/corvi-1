@@ -39,6 +39,21 @@ function __construct() {
     
    }
    
+public function GetMailFromRolId($rolid){
+    
+    
+    //SELECT email from (( braizperuser
+                                    //inner join usuario on usuario.rut = braizperuser.fk_rut)
+                                    //) where braizperuser.fk_rolid = 2424
+    
+    
+    
+    
+}   
+   
+   
+   
+   
 public function CountAllRows($sql){
     
     global $err;
@@ -195,9 +210,8 @@ SET
 `ref` = '".$ref."',
 `lat` = ".$lat.",
 `lon` = ".$lon.",
-`ctcan` = ".$ctcan.",
-`us` = '".$rutID."'
- WHERE `rolid` = ".$rol;  
+`ctcan` = ".$ctcan."
+  WHERE `rolid` = ".$rol;  
     
    $err->ErrorFile("SearhFindShow()-ActualizaBienRaiz " .$sql);  
   

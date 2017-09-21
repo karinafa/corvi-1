@@ -444,8 +444,7 @@ window.onload = function() {
                             INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
                             INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
                             where usuario.email='".$_SESSION['myemail']."'";
-                        
-                        
+              
                         $r = $updater->DisplaySQLResults($sql);
                         $errl->ErrorFile($sql);
                         if(!empty($r)){
@@ -631,61 +630,85 @@ window.onload = function() {
                     
 			<div class="tab-pane" id="settings">
                                 <div class="card-content table-responsive table-full-width">
-                                <table class="table">
-                                    <thead class="text-danger">
-                                        <th>Documentos</th>
-                                        <th>Ingreso</th>
-                                        
-			</thead>
-			<tbody>
-                            
-				<tr>
-                                        <td><div class="container">
+                                <div class="container">
                                 
                                 <div class="row" style="padding-top:10px;">
                                 <div class="col-xs-2">
-                                <button id="uploadBtn" class="btn btn-large btn-primary">Subir</button>
+                                <button id="uploadBtn_d" class="btn btn-large btn-primary">Subir Documento</button>
                                 </div>
                                 <div class="col-xs-10">
-                                    <div id="progressOuter" class="progress progress-striped active" style="display:none;">
-                                       <div id="progressBar" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <div id="progressOuter_d" class="progress progress-striped active" style="display:none;">
+                                       <div id="progressBar_d" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                                     </div>
                                     </div>
                                 </div>
                                 </div>
                                 <div class="row" style="padding-top:10px;">
                                     <div class="col-xs-10">
-                                        <div id="msgBox">
+                                        <div id="msgBox_d">
                                         </div>
                                     </div>
                                 </div>
-                                </div></td>
-					<td>Certificado de Hipoteca</td>
+                                </div>    
+                                <table class="table">
+                                   
+			<tbody>
+                            
+                                <tr>
+					<div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios">
+                                                 Certificado de Hipoteca
+                                            </label>
+                                        </div>
 					
 				</tr>
 				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Copia de Inscripcion de Dominio con Vigencia</td>
-				</tr>
-				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Titulos de Dominios de los últimos 10 años</td>
+					<div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios">
+                                                 Copia de Inscripcion de Dominio con Vigencia
+                                            </label>
+                                        </div>
 					
 				</tr>
 				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Expropiación Fiscal</td>
+					<div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios">
+                                                 Titulos de Dominios de los últimos 10 años
+                                            </label>
+                                        </div>
+					
 					
 				</tr>
 				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Avaluo Fiscal</td>
+					<div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios">
+                                                 Certificado de Expropiación Fiscal
+                                            </label>
+                                        </div>
+					
 					
 				</tr>
 				<tr>
-					<td><label><strong>Subir Archivo: </strong><input type="file" id="uploadfiles" multiple="multiple" class="btn btn-default"/></label></td>
-					<td>Certificado de Deuda</td>
+					<div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios">
+                                                 Certificado de Avaluo Fiscal
+                                            </label>
+                                        </div>
 					
+					
+				</tr>
+				<tr>
+					<div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios">
+                                                 Certificado de Deuda
+                                            </label>
+                                        </div>				
 				</tr>
 			</tbody>
 		</table>

@@ -1,3 +1,96 @@
+<?php
+
+require_once '../classes/SearchFindShow.php';
+require_once '../classes/UserSessions.php';
+require_once '../classes/MyErrorHandler.php';
+
+session_start();
+
+/**
+ * 
+ * @Global Var
+ * 
+ */
+
+$correo = "";
+
+
+
+function SanityCheck(){
+    
+    global $correo;
+    
+if (isset($_SESSION['myemail'])){
+//desde sigin.php
+    
+    //echo "En sanity...";
+    
+    $correo = $_SESSION['myemail'];
+
+    return 1;
+
+    }
+        return 0;
+    }
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+
+//****
+//Valida la session contra Base de Datos
+
+function ShieldSession(){
+    
+    global $correo;
+        
+    //echo "Shield..";
+    
+      
+            $sess = new UserSessions(); 
+            //Echo "After Sanity...";
+            $Ecode =  $sess->CheckSessionInDb(session_id(),$correo);
+            //echo $Ecode;
+            
+        if ($Ecode!="302"){
+            
+            redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php");
+            
+        
+        }
+      
+           
+      
+    
+    
+    
+}
+
+/**
+ * Valida si la variablle correo esta seteada como
+ * parte de la sesion global
+ * 
+ */
+if (SanityCheck()){
+    ShieldSession();
+    }
+else{
+    redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php"); 
+}
+
+?>
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,24 +119,69 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
     
+    <!--AJAX -->  
+      <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+      <script src="../assets/js/jquery.form.js"></script>
+        
+        <script>
+            
+            $(document).ready(function() {
+
+    // process the form
+    $('#actualizar').submit(function(event) {
+
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+            'rol'              : $('input[name=rol]').val(),
+            'dorm'             : $('input[name=dorm]').val(),
+            'mtscuad'    : $('input[name=mtscuad]').val(),
+            'banos'      : $('input[name=banos]').val(),
+            'gstcmn'      : $('input[name=gstcmn]').val(),
+            'mtscuad'      : $('input[name=mtscuad]').val(),
+            'piscina'      : $('input[name=piscina]').val(),
+            'ctcan'      : $('input[name=ctcan]').val(),
+            'direccion'      : $('input[name=direccion]').val(),
+            'comuna'      : $('input[name=comuna]').val(),
+            'ufprecio'      : $('input[name=ufprecio]').val(),
+            'ref'      : $('input[name=ref]').val(),
+            'id'      : $('input[name=id]').val(),
+            'upd'      : $('input[name=upd]').val(),
+            'query'      : $('input[name=query]').val(),
+        };
+
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'matricularp.php', // the url where we want to POST
+            data        : formData, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+                        encode          : true
+        })
+            // using the done promise callback
+            .done(function(data) {
+
+                // log data to the console so we can see
+                console.log(data); 
+                $('#errorum_row').show(data.code);
+                $('#errorum').text(data.message);
+
+                // here we will handle errors and validation messages
+            });
+
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    });
+
+});
+            
+            </script>
+        
     
     
     
-    <!-- Core CSS file Vitrina Virtual-->
-    <link rel="stylesheet" href="../assets/css/photoswipe.css"> 
-
-    <!-- Viirrina Virual
-     In the folder of skin CSS file there are also:
-     - .png and .svg icons sprite, 
-     - preloader.gif (for browsers that do not support CSS animations) -->
-    <link rel="stylesheet" href="../assets/css/default-skin.css"> 
-
-    <!-- Core JS file -->
-    <script src="../assets/js/photoswipe.min.js"></script> 
-
-    <!-- UI JS file -->
-    <script src="../assets/js/photoswipe-ui-default.min.js"></script> 
-    <!-- Fin CCS Vitrina Virtual-->
+    
+    
     
 </head>
 
@@ -90,10 +228,7 @@
 	                        <i class="material-icons">add_shopping_cart</i>
 	                        <p>Comprar</p>
 	                    </a>
-	                </li>
-                        
-                        
-                        
+	                </li>      
                         <li>
 	                    <a href="agenda.php">
 	                        <i class="material-icons">schedule</i>
@@ -166,8 +301,145 @@
 			</nav>
                 
                 <!-- Buscador -->
+     <?php  
+     
+     // validar si existe la paginacion
+        if (!(isset($_GET["pagenum"]))) 
+            { 
+
+                $pagenum = 0; 
+
+            } 
+            else
+                {
+                $pagenum = $_GET["pagenum"];
+  
+                }
+     
+     
+     
+     
+                // ESperamos los resultados de todas las casas disponibles
+// SearchFindShow
+   $errline = new MyErrorHandler();  
+   $results = new SearchFindShow();
+   $query_flag = "";
+     
+   if(isset($_POST["query"])){$query_flag =  $_POST["query"];};
+   
+   if(isset($_GET["query"])){$query_flag =  $_GET["query"];};
+   
+   $errline->ErrorFile("Global value ". isset($_POST["query"]));
+   
+if($query_flag != 1){
+$sql = "SELECT * FROM `braiz`"; 
+
+$rows = $results->CountAllRows($sql) - 1;
+
+$errline->ErrorFile("Numero de Rows Encontradas $rows");
+    
+
+
+
+}
+else{
+    
+    
+        
+        
+    if(isset($_POST['rolid'])) {$rolid = $_POST['rolid'];} else {$rolid="";};
+    if(isset($_POST['email'])){$email = $_POST['email'];} else {$email="";};
+    if(isset($_POST['comuna'])){ $comuna = $_POST['comuna'];}else {$comuna="";};    
+    
+    
+    $errline->ErrorFile("Admin . Post Values ".$rolid." ".$email." ".$comuna);
+    
+    
+    
+    
+        
+    if(isset($_GET['rolid'])) {$comuna = $_GET['rolid'];}; 
+    if(isset($_GET['email'])){$email = $_GET['email'];}; 
+    if(isset($_GET['comuna'])){ $hasta = $_GET['comuna'];};
+    
+    $errline->ErrorFile("Admin . Get Values ".$comuna." ".$email." ".$rolid);
+
+    $sql = $results->SearchEngine($comuna, $desde, $hasta, $dorm, $banos);
+    
+    $rows = $results->CountAllRows($sql) - 1;
+    
+    $errline->ErrorFile("Numero de Rows Encontradas $rows");
+    
+
+    
+         
+}
+
+// Cantidad de resultados por pagina
+$page_rows = 1;
+
+//division por pagina de resultados
+$last = ceil($rows/$page_rows);
+
+//$pagenum < 1
+
+
+
+ if ($pagenum < 1) 
+ { 
+    $pagenum = 0;
+    
+     }
+ 
+    elseif ($pagenum > $last) 
+ { 
+        $pagenum = $last - 1; 
+ }  
+
+ 
+ //if ($pagenum == 1) { $pagenum = $pagenum - 1 ;}
+ 
+$max = 'limit ' .($pagenum) * $page_rows .',' .$page_rows; 
+
+
+if($query_flag != 1){
+$data_p = $results->DisplayPageResults($max);}
+else{
+    $data_p = $results->DisplayPageResultswithMax($sql, $max);
+}
+
+if(!empty($data_p)){
+    $no_value = 1;}
+   
+/** FIN FUNCIONES DE PAGINACION **/
+                
+?>             
                 
                 <div class="content">
+                    
+                    <div id="errorum_row" style="display: none;" class="row">
+                        <div class="col-lg-7">
+                                <div class="container-fluid">
+                                    <div class="alert alert-danger">
+                                            <div  class="container-fluid">
+                                                <div class="alert-icon">
+                                                <i class="material-icons">error_outline</i>
+                                                </div>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                                </button>
+                                                <div id="errorum">
+                                                    <b>Error Alert:</b> Panel de Errores
+                                                </div>
+                                                
+                                            </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
                 
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -248,34 +520,46 @@
 		<div class="tab-content">
 			<div class="tab-pane active" id="profile">
 				<div class="card-content">
-	                                <form>
+                                    <form id="actualizar" method="post">
 	                                    <div class="row">
-	                                        <div class="col-md-5">
+	                                        <div class="col-md-2">
+												<div class="form-group label-floating">
+													<label class="control-label">Rol</label>
+													<input type="text" name="rol" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["rolid"]:""; echo $eprint;?>">
+												</div>
+	                                        </div>
+	                                        <div class="col-md-2">
 												<div class="form-group label-floating">
 													<label class="control-label">Dormitorios</label>
-													<input type="text" class="form-control">
+													<input type="text" name="dorm" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["dorm"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
-	                                        
-	                                        <div class="col-md-4">
+	                                        <div class="col-md-2">
 												<div class="form-group label-floating">
 													<label class="control-label">Baños</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="banos" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["banos"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
+                                                <div class="col-md-2">
+												<div class="form-group label-floating">
+													<label class="control-label">Piscina</label>
+													<input type="text" name="piscina" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["piscina"]:""; echo $eprint;?>">
+												</div>
+	                                        </div>
+                                                
 	                                    </div>
 
 	                                    <div class="row">
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Mts Superficie</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="mtscuad" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["mtscuad"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-6">
 												<div class="form-group label-floating">
 													<label class="control-label">Mts Contruida</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="mtscrd" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["mtscrd"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -284,7 +568,7 @@
 	                                        <div class="col-md-12">
 												<div class="form-group label-floating">
 													<label class="control-label">Valor UF</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="ufprecio" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["ufprecio"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -293,19 +577,19 @@
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Gasto Común</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="gstcmn" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["gstocmn"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Contribución Anual</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="ctcan" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["ctcan"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Dirección</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="direccion" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["direccion"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
 	                                    </div>
@@ -313,25 +597,20 @@
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Comuna</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="comuna" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["comuna"]:""; echo $eprint;?>">
 												</div>
 	                                        </div>
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Referencia</label>
-													<input type="text" class="form-control" >
+													<input type="text" name="ref" class="form-control" value="<?php $eprint = ($no_value == 1)?$data_p["ref"]:""; echo $eprint;?>">
+                                                                                                        <input type="hidden" name="query" value="0">
+                                                                                                        <input type="hidden" name="id" value="0">
+                                                                                                        <input type="hidden" name="upd" value="1">
 												</div>
 	                                        </div>
                                                 
-                                                <div class="col-sm-4">
-                                                    <div class="form-group label-floating has-success">
-                                                    <label class="control-label">Success input</label>
-                                                    <input type="text" value="Success" class="form-control" />
-                                                        <span class="form-control-feedback">
-                                                        <i class="material-icons">done</i>
-                                                        </span>
-                                                    </div>
-                                                </div>
+                                                
                                                 
                                                 </div>
 
@@ -343,21 +622,65 @@
 	                            </div>
 			</div>
 			<div class="tab-pane" id="messages">
-				<div class="card card-stats ">
-                                    <div class="card-header" data-background-color="orange">
+				<?php    
+                                
+                                    $FolderId = New UserSessions();
+                                    $virtualF = "";
+                                    
+                                    $thesql = "SELECT email from (( braizperuser
+                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
+                                    ) where braizperuser.fk_rolid =" .$data_p["rolid"];
+                                    
+                                    $aResult = New SearchFindShow();
+                                    $e = New MyErrorHandler();
+                                    
+                                    $res = $aResult->DisplaySQLResults($thesql);
+                                    
+                                    $e->ErrorFile("Resultado de query por RolID->".$res["email"]);
+                        
+                                    $virtualF = '../virtual/'.$FolderId->GetIDforFolder($res["email"]);
+                                    
+                                    $e->ErrorFile("Virtual->".$virtualF);
+                                    
+                                    if ($res["email"]!="") {
                                         
-                                        <img src="../virtual/1000/h-w1020_h770_q80.jpg" alt="Casa" height="42" width="42">
-                                    </div>
-                                <div class="card-content">
-                                        <p class="category">Used Space</p>
-                                        <h3 class="title">49/50<small>GB</small></h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>
-                                    </div>
-                                </div>
-                                </div>
+                                    
+                                    
+                                    if (file_exists($virtualF)){
+                                    
+                                    if ($handle = opendir($virtualF)) {
+
+                                        while (false !== ($entry = readdir($handle))) { 
+
+                                            if ($entry != "." && $entry != "..") {
+
+                                                echo '<div class="card card-stats ">';
+                                                    echo '<div class="card-header" data-background-color="orange">';                                 
+                                                            echo '<img src="../virtual/'.$FolderId->GetIDforFolder($correo)."/".$entry.'" alt="Casa" height="42" width="42">';
+                                                    echo '</div>';
+                                                echo '<div class="card-content">';
+                                                    echo '<p class="category">Espacio Usado</p>';
+                                                    echo '<h3 class="title">49/50<small>GB</small></h3>';
+                                                echo '</div>';
+					        echo '</div>';
+                                            }						
+                                        }
+                                      closedir($handle);    
+                                    }
+                                    }
+                                    }
+                                    else {
+     
+                                        echo '<div class="card card-stats ">';
+                                                    echo '<div class="card-header" data-background-color="orange">';                                 
+                                                            echo 'No hay imagenes';
+                                                    echo '</div></div>';
+                                        
+                                    }
+
+                          
+                                       
+                                ?>
 			</div>
 			<div class="tab-pane" id="settings">
                                 <div class="card-content table-responsive table-full-width">
@@ -412,7 +735,66 @@
                     
                     
                 </div>
-z
+<div class="collapse navbar-collapse">
+                                            
+						<form class="navbar-form nav-align-center" role="search">
+                                                         
+                                                          <?php
+                                                        
+                                                          if($query_flag!=1){$query_flag="";}else{$query_flag="&query=1&comunag=".$comuna."&desdeg=".$desde."&hastag=".$hasta."&dormg=".$dorm."&banosg=".$banos."";};
+                                                          
+                                                          $vpagenumber = $pagenum + 1;
+                                                          $vlast = $last + 1;
+                                                          
+                                                          echo " --Página " . $vpagenumber ." de " . $vlast ." -- <p>";
+                                                          
+                                                          if ($pagenum == 0){
+                                                              
+                                                          }
+                                                          else{
+                                                              
+                                                           
+                                                                $previous = $pagenum - 1;
+                                                                if ($previous < 0 ){ $previous = 0; } 
+                                       
+                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=0".$query_flag."'><i class=\"material-icons\">skip_previous</i>";							
+                                                                echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$previous.$query_flag."'><i class=\"material-icons\">fast_rewind</i>";
+                                                                
+                                                          }      
+                                                            
+                                                          
+                                                          
+                                                          if ($pagenum == $last) 
+                                                            {
+
+                                                            } 
+
+                                                                else {
+
+                                                                        $next = $pagenum + 1;
+                                                                        
+                                                                        if ($pagenum == $last){ $next = $last - 1; }
+
+                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=".$next.$query_flag."'>";
+                                                                        echo "<i class=\"material-icons\">fast_forward</i></a>";
+
+                                                                        echo " ";
+
+                                                                        echo "<a href='".$_SERVER['PHP_SELF']."?pagenum=". ($last - 1) .$query_flag."'>";
+                                                                        echo "<i class=\"material-icons\">skip_next</i></a>";
+
+                                                                    } 
+                                                          
+                                                         
+                                                          
+                                                          
+                                                            
+								?>
+							
+						</form>
+					</div>
+				</div>
+        </div> 
                 
                 
                 
