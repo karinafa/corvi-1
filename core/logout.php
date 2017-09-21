@@ -8,7 +8,7 @@
 
 require_once '../classes/UserSessions.php';
 require_once '../classes/MyErrorHandler.php';
-
+session_start();
 
 
 //Funcion de redireccion de Salida a otra pagina
@@ -24,7 +24,7 @@ function CheckLogout($remail){
     $myerr = new MyErrorHandler();
     $myerr->ErrorFile("test");
     
-    session_start();
+    
     $ID = session_id();
     
     $code = $sess->LogoutSession($ID, $remail);
@@ -39,7 +39,7 @@ function CheckLogout($remail){
         session_unset(); 
 
         // destroy the session 
-        session_destroy();
+        //session_destroy();
         
         //redirects
         redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/signin.php");

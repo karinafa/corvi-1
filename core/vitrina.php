@@ -1,12 +1,10 @@
-
-
 <?php
-
+session_start();
 require_once '../classes/UserSessions.php';
 require_once '../classes/SearchFindShow.php';
 require_once '../classes/MyErrorHandler.php';
 
-session_start();
+
 
 /**
  * 
