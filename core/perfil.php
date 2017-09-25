@@ -119,67 +119,58 @@ $data_perfil = $up->GetUserData();
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
  
     
-    <!--AJAX FORM-->  
+     <!--AJAX -->  
       <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
       <script src="../assets/js/jquery.form.js"></script>
-      
         
         <script>
-        
-    // prepare the form when the DOM is ready 
-    $(document).ready(function() { 
-    var options = { 
-        //target:        '#errorum',   // target element(s) to be updated with server response
-        dataType:  'json',
-        //beforeSubmit:  showRequest,  // pre-submit callback 
-        success:       showResponse,  // post-submit callback 
- 
-        // other available options: 
-        //url:       url         // override for form's 'action' attribute 
-        //type:      type        // 'get' or 'post', override for form's 'method' attribute 
-        //dataType:  json        // 'xml', 'script', or 'json' (expected server response type) 
-        //clearForm: true        // clear all form fields after successful submit 
-        //resetForm: true        // reset the form after successful submit 
- 
-        // $.ajax options can be used here too, for example: 
-        //timeout:   3000 
-    }; 
- 
-    // bind to the form's submit event 
-    $('#perfil').submit(function() { 
-        // inside event callbacks 'this' is the DOM element so we first 
-        // wrap it in a jQuery object and then invoke ajaxSubmit 
-        $(this).ajaxSubmit(options); 
- 
-        // !!! Important !!! 
-        // always return false to prevent standard browser submit and page navigation 
-        return false; 
-    }); 
-}); 
+            
+            $(document).ready(function() {
 
-// post-submit callback 
-function showResponse(data)  { 
-    // for normal html responses, the first argument to the success callback 
-    // is the XMLHttpRequest object's responseText property 
- 
-    // if the ajaxSubmit method was passed an Options Object with the dataType 
-    // property set to 'xml' then the first argument to the success callback 
-    // is the XMLHttpRequest object's responseXML property 
- 
-    // if the ajaxSubmit method was passed an Options Object with the dataType 
-    // property set to 'json' then the first argument to the success callback 
-    // is the json data object returned by the server 
- 
-    alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + 
-       '\n\nThe output div should have already been updated with the responseText.'); 
-        //console.log(data.message);
-       $('#errorum_row').show();
-       $('#errorum').text(data.message);
-} 
-    
-    
-    
-    </script>
+    // process the form
+    $('#perfil').submit(function(event) {
+
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+            'email'              : $('input[name=email]').val(),
+            'password'             : $('input[name=password]').val(),
+            'rut'    : $('input[name=rut]').val(),
+            'nombre'      : $('input[name=nombre]').val(),
+            'apellido'      : $('input[name=apellido]').val(),
+            'direccion'      : $('input[name=direccion]').val(),
+            'comuna'      : $('input[name=comuna]').val(),
+            'tcredito'      : $('input[name=tcredito]').val(),
+            'fvenc'      : $('input[name=fvenc]').val(),
+            'vali'      : $('input[name=vali]').val(),
+        };
+
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'perfilp.php', // the url where we want to POST
+            data        : formData, // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+                        encode          : false
+        })
+            // using the done promise callback
+            .done(function(data) {
+
+                // log data to the console so we can see
+                console.log(data); 
+                $('#errorum_row').show(data.code);
+                $('#errorum').text(data.message);
+
+                // here we will handle errors and validation messages
+            });
+
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    });
+
+});
+            
+            </script>
     
     
     
@@ -343,13 +334,13 @@ function showResponse(data)  {
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Correo Electrónico</label>
-													<input name="email" type="email" class="form-control" value="<?php echo $data_perfil["email"];?>">
+													<input name="email" type="email" class="form-control" value="<?php echo $data_perfil["email"];?>" disabled>
 												</div>
 	                                        </div>
                                                 <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Contraseña</label>
-													<input name="password" type="password" class="form-control" >
+													<input name="password" type="password" class="form-control" value="<?php echo $data_perfil["pass"];?>">
 												</div>
 	                                        </div>
                                                 
@@ -396,33 +387,31 @@ function showResponse(data)  {
 	                                        <div class="col-md-4">
 												<div class="form-group label-floating">
 													<label class="control-label">Comuna</label>
-													
-                                                                                                        <select name="comuna">
-                                                                                                            <option value="1">Cerrillos</option>
-                                                                                                            <option value="2">Cerro Navia</option>
-                                                                                                            <option value="3">Conchalí</option>
-                                                                                                            <option value="4">El Bosque</option>
-                                                                                                            <option value="5">Estacion Central</option>
-                                                                                                            <option value="6">Huechuraba</option>
-                                                                                                            <option value="7">Independencia</option>
-                                                                                                            <option value="8">La Cisterna</option>
-                                                                                                            <option value="9">La Florida</option>
-                                                                                                            <option value="10">La Pintana</option>
-                                                                                                            <option value="11">La Granja</option>
-                                                                                                            <option value="12">La Reina</option>
-                                                                                                            <option value="13">Las Condes</option>
-                                                                                                            <option value="14">Lo Barnechea</option>
-                                                                                                   </select>
+												<?php	
                                                                                                         
+                                                                                                        //$errline->ErrorFile("Comuna ->".$data_perfil["comuna"]);
+                                                                                                        echo '<select id="comuna" name="comuna">';
+                                                                                                            if ((int)$data_perfil["comuna"]==1){echo '<option value="1" selected>Cerrillos</option>';}else{echo '<option value="1">Cerrillos</option>';};                                                                     
+                                                                                                            if ((int)$data_perfil["comuna"]==2){echo '<option value="2" selected>Cerro Navia</option>';}else{echo '<option value="2">Cerro Navia</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==3){echo '<option value="3" selected>Conchalí</option>';}else{echo '<option value="3">Conchalí</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==4){echo '<option value="4" selected>El Bosque</option>';}else{echo '<option value="4">El Bosque</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==5){echo '<option value="5" selected>Estación Central</option>';}else{echo '<option value="5">Estacion Central</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==6){echo '<option value="6" selected>Huechuraba</option>';}else{echo '<option value="6">Huechuraba</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==7){echo '<option value="7" selected>Independencia</option>';}else{echo '<option value="7">Independencia</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==8){echo '<option value="8" selected>La Cistena</option>';}else{echo '<option value="8">La Cisterna</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==9){echo '<option value="9" selected>La Florida</option>';}else{echo '<option value="9">La Florida</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==10){echo '<option value="10" selected>La Pintana</option>';}else{echo '<option value="10">La Pintana</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==11){echo '<option value="11" selected>La Granja</option>';}else{echo '<option value="11">La Granja</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==12){echo '<option value="12" selected>La Reina</option>';}else{echo '<option value="11">La Reina</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==13){echo '<option value="13" selected>Las Condes</option>';}else{echo '<option value="13">Las Condes</option>';};
+                                                                                                            if ((int)$data_perfil["comuna"]==14){echo '<option value="14" selected>Lo Barnenechea</option>';}else{echo '<option value="14">Lo Barnechea</option>';};
+                                                                                                          
+                                                                                                   echo '</select>';
                                                                                                         
+                                                                                                ?>        
 												</div>
 	                                        </div>
-	                                        <div class="col-md-4">
-												<div class="form-group label-floating">
-													<label class="control-label">País</label>
-													<input name="pais" type="text" class="form-control" >
-												</div>
-	                                        </div>
+	                                        
 	                                        
 	                                    </div>
                                             <div class="row">
@@ -441,7 +430,7 @@ function showResponse(data)  {
 												</div>
 	                                        </div>
                                                 <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-md-2">
 												<div class="form-group label-floating">
 													<label class="control-label">Validador</label>
 													<input name="vali" type="text" class="form-control" >

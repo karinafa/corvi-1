@@ -1,1001 +1,445 @@
-Wed, 20 Sep 2017 01:14:27 +0200 correo sesionslowdown75@hotmail.com
-Wed, 20 Sep 2017 01:14:48 +0200 correo sesionslowdown75@hotmail.com
-Wed, 20 Sep 2017 01:14:48 +0200 Global value 
-Wed, 20 Sep 2017 01:14:48 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:14:48 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:14:48 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:14:48 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2424
-Wed, 20 Sep 2017 01:14:48 +0200 Vitrina - slowdown75@hotmail.com
-Wed, 20 Sep 2017 01:14:48 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 01:14:49 +0200 Global value 
-Wed, 20 Sep 2017 01:14:49 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:14:49 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:14:49 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:14:49 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:15:14 +0200 Global value 
-Wed, 20 Sep 2017 01:15:14 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:15:14 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:15:14 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:15:14 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:18:17 +0200 Global value 
-Wed, 20 Sep 2017 01:18:17 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:18:17 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:18:17 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:18:17 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:18:30 +0200 Global value 
-Wed, 20 Sep 2017 01:18:30 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:18:30 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:18:30 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:18:30 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:18:33 +0200 Global value 
-Wed, 20 Sep 2017 01:18:33 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:18:33 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:18:33 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:18:33 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:18:38 +0200 Global value 
-Wed, 20 Sep 2017 01:18:38 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:18:38 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:18:38 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:18:38 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:18:46 +0200 Global value 
-Wed, 20 Sep 2017 01:18:46 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:18:46 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:18:46 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:18:46 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:20:58 +0200 Global value 
-Wed, 20 Sep 2017 01:20:58 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:20:58 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:20:58 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:20:58 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:21:00 +0200 Global value 
-Wed, 20 Sep 2017 01:21:00 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:21:00 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:21:00 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:21:00 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:21:15 +0200 Global value 
-Wed, 20 Sep 2017 01:21:15 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:21:15 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:21:15 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:21:15 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:21:19 +0200 Dato no EncontradoDatos Validados
-Wed, 20 Sep 2017 01:21:19 +0200 Matricularp - Valor UPD1
-Wed, 20 Sep 2017 01:21:19 +0200 AJAX CALL ACTUALIZAR24244
-Wed, 20 Sep 2017 01:21:19 +0200 SELECT `usuario`.`rut` FROM `usuario` where `email`='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 01:21:19 +0200 SearhFindShow()-ActualizaBienRaiz UPDATE `braiz`
+Mon, 25 Sep 2017 00:13:49 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:13:52 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:13:52 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:13:52 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 4
+Mon, 25 Sep 2017 00:13:52 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:13:52 +0200 User Session Update USer Data-> 
+UPDATE usuario
 SET
-`rolid` = 2424,
-`mtscuad` = 1500 ,
-`mtscrd` = 1500,
-`direccion` = 'los palomos',
-`comuna` = 1,
-`dorm` = 1,
-`banos` = 4,
-`piscina` = 1,
-`gstocmn` = 150000,
-`impuesto` = 19,
-`ufprecio` = 3504,
-`ref` = 'entre parinacota 1 y  4',
-`lat` = 0,
-`lon` = 0,
-`ctcan` = 50001
-  WHERE `rolid` = 2424
-Wed, 20 Sep 2017 01:21:19 +0200 IngresarDatosMatricula()->{ "message": "Actualizacion realizada", "code":"200"}
-Wed, 20 Sep 2017 01:21:19 +0200 IngresarDatosMatricula() Cod Err->200
-Wed, 20 Sep 2017 01:21:20 +0200 Global value 
-Wed, 20 Sep 2017 01:21:20 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:21:20 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:21:20 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:21:20 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
+`pass` = '',
+`nombre` ='',
+`apellido` = '',
+`fec_nac` = 0,
+`direccion` = '',
+`comuna`=,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0,
+WHERE `rut` =''
+Mon, 25 Sep 2017 00:33:09 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:33:13 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:33:22 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:33:22 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:33:22 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 4
+Mon, 25 Sep 2017 00:33:22 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:33:22 +0200 User Session Update USer Data-> 
+UPDATE usuario
+SET
+`pass` = '',
+`nombre` ='',
+`apellido` = '',
+`fec_nac` = 0,
+`direccion` = '',
+`comuna`=,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0,
+WHERE `rut` =''
+Mon, 25 Sep 2017 00:34:16 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:34:17 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:34:20 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:34:20 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:34:20 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 3
+Mon, 25 Sep 2017 00:34:20 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:34:20 +0200 User Session Update USer Data-> 
+UPDATE usuario
+SET
+`pass` = '',
+`nombre` ='',
+`apellido` = '',
+`fec_nac` = 0,
+`direccion` = '',
+`comuna`=,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0,
+WHERE `rut` =''
+Mon, 25 Sep 2017 00:36:09 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:36:11 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:36:15 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:36:15 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:36:15 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 3
+Mon, 25 Sep 2017 00:36:15 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:36:15 +0200 User Session Update USer Data-> 
+UPDATE usuario
+SET
+`pass` = '',
+`nombre` ='',
+`apellido` = '',
+`fec_nac` = 0,
+`direccion` = '',
+`comuna`=,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0,
+WHERE `rut` =''
+Mon, 25 Sep 2017 00:38:32 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:38:34 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:38:37 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:38:37 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:38:37 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 3
+Mon, 25 Sep 2017 00:38:37 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:38:37 +0200 User Session Update USer Data-> 
+UPDATE usuario
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=3,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0,
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 00:39:50 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:39:51 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:39:55 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:39:55 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:39:55 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 4
+Mon, 25 Sep 2017 00:39:55 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:39:55 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=4,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0,
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 00:40:51 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:40:53 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:40:56 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:40:56 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:40:56 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 4
+Mon, 25 Sep 2017 00:40:56 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:40:56 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=4,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 00:41:05 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:41:06 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:41:08 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:41:12 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:41:12 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:41:12 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 6
+Mon, 25 Sep 2017 00:41:12 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:41:12 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=6,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 00:45:06 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:45:08 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:45:12 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 00:45:12 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 00:45:12 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 4
+Mon, 25 Sep 2017 00:45:12 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 00:45:12 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=4,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 00:45:14 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:45:15 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:45:57 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:46:10 +0200 SearchFindShow->DisplaySQLResults() 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:46:10 +0200 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:46:10 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:46:10 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:46:52 +0200 Global value 
+Mon, 25 Sep 2017 00:46:52 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Mon, 25 Sep 2017 00:46:52 +0200 Numero de Rows Encontradas 4
+Mon, 25 Sep 2017 00:46:52 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
+Mon, 25 Sep 2017 00:46:52 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
                                     inner join usuario on usuario.rut = braizperuser.fk_rut)
                                     ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:21:40 +0200 Global value 
-Wed, 20 Sep 2017 01:21:40 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:21:40 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:21:40 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:21:40 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
+Mon, 25 Sep 2017 00:46:52 +0200 Resultado de query por RolID->slowdown75@hotmail.com
+Mon, 25 Sep 2017 00:46:52 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:46:52 +0200 Virtual->../virtual/a31c8
+Mon, 25 Sep 2017 00:46:52 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:47:01 +0200 Global value 
+Mon, 25 Sep 2017 00:47:01 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Mon, 25 Sep 2017 00:47:01 +0200 Numero de Rows Encontradas 4
+Mon, 25 Sep 2017 00:47:01 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
+Mon, 25 Sep 2017 00:47:01 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
                                     inner join usuario on usuario.rut = braizperuser.fk_rut)
                                     ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:21:42 +0200 Global value 
-Wed, 20 Sep 2017 01:21:42 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:21:42 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:21:42 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:21:42 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:22:58 +0200 Global value 
-Wed, 20 Sep 2017 01:22:58 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:22:58 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:22:58 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:22:58 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:23:00 +0200 Global value 
-Wed, 20 Sep 2017 01:23:00 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:23:00 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:23:00 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:23:00 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:28:43 +0200 Global value 
-Wed, 20 Sep 2017 01:28:43 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:28:43 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:28:43 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 01:28:43 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 01:58:23 +0200 Global value 
-Wed, 20 Sep 2017 01:58:23 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 01:58:23 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 01:58:23 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:03:13 +0200 Global value 
-Wed, 20 Sep 2017 02:03:13 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:03:13 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:03:13 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:03:13 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:03:13 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:03:13 +0200 Virtual->
-Wed, 20 Sep 2017 02:03:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:06:14 +0200 Global value 
-Wed, 20 Sep 2017 02:06:14 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:06:14 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:06:14 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:06:14 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:06:14 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:06:14 +0200 Virtual->
-Wed, 20 Sep 2017 02:06:14 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:06:18 +0200 Global value 
-Wed, 20 Sep 2017 02:06:18 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:06:18 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:06:18 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:06:18 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2426
-Wed, 20 Sep 2017 02:06:18 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:06:18 +0200 Virtual->
-Wed, 20 Sep 2017 02:06:18 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:06:23 +0200 Global value 
-Wed, 20 Sep 2017 02:06:23 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:06:23 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:06:23 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:06:23 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2427
-Wed, 20 Sep 2017 02:06:23 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:06:23 +0200 Virtual->
-Wed, 20 Sep 2017 02:06:23 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:06:26 +0200 Global value 
-Wed, 20 Sep 2017 02:06:26 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:06:26 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:06:26 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:06:26 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =123456
-Wed, 20 Sep 2017 02:06:26 +0200 Resultado de query por RolID->Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:06:26 +0200 Virtual->
-Wed, 20 Sep 2017 02:06:26 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:06:31 +0200 Global value 
-Wed, 20 Sep 2017 02:06:31 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:06:31 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:06:31 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:06:31 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:06:31 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:06:31 +0200 Virtual->
-Wed, 20 Sep 2017 02:06:31 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:08:13 +0200 Global value 
-Wed, 20 Sep 2017 02:08:13 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:08:13 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:08:13 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:08:13 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:08:13 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:08:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:08:13 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:09:44 +0200 Global value 
-Wed, 20 Sep 2017 02:09:44 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:09:44 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:09:44 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:09:44 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:09:44 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:09:44 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:09:44 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:10:28 +0200 Global value 
-Wed, 20 Sep 2017 02:10:28 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:10:28 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:10:28 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:10:28 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:10:28 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:10:28 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:10:28 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:15:13 +0200 Global value 
-Wed, 20 Sep 2017 02:15:13 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:13 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:13 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:15:13 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:15:13 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:15:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:15:13 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:15:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:15:23 +0200 Global value 
-Wed, 20 Sep 2017 02:15:23 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:23 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:23 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:15:23 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:15:23 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:15:23 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:15:23 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:15:30 +0200 Global value 
-Wed, 20 Sep 2017 02:15:30 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:30 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:30 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:15:30 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2426
-Wed, 20 Sep 2017 02:15:30 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:15:30 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:15:30 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:15:34 +0200 Global value 
-Wed, 20 Sep 2017 02:15:34 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:34 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:34 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:15:34 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2427
-Wed, 20 Sep 2017 02:15:34 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:15:34 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:15:34 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:15:37 +0200 Global value 
-Wed, 20 Sep 2017 02:15:37 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:37 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:37 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:15:37 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =123456
-Wed, 20 Sep 2017 02:15:37 +0200 Resultado de query por RolID->Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:15:37 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:15:37 +0200 Virtual->../virtual/59cdf
-Wed, 20 Sep 2017 02:15:37 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:15:51 +0200 Global value 
-Wed, 20 Sep 2017 02:15:51 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:51 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:51 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:15:51 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:15:51 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:15:51 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:15:51 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:15:51 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:15:58 +0200 Global value 
-Wed, 20 Sep 2017 02:15:58 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:15:58 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:15:58 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:15:58 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
+Mon, 25 Sep 2017 00:47:01 +0200 Resultado de query por RolID->slowdown75@hotmail.com
+Mon, 25 Sep 2017 00:47:01 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:47:01 +0200 Virtual->../virtual/a31c8
+Mon, 25 Sep 2017 00:47:01 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:47:09 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:47:12 +0200 SearchFindShow->DisplaySQLResults() 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:47:12 +0200 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:47:12 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:47:12 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:47:13 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:47:46 +0200 SearchFindShow->DisplaySQLResults() 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:47:46 +0200 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:47:46 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:47:46 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:35 +0200 SearchFindShow->DisplaySQLResults() 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:48:35 +0200 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:48:35 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:35 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:38 +0200 SearchFindShow->DisplaySQLResults() 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:48:38 +0200 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:48:38 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:38 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:41 +0200 SearchFindShow->DisplaySQLResults() 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:48:41 +0200 
+                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
+                            FROM ((braiz
+                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
+                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
+                            where usuario.email='slowdown75@hotmail.com'
+Mon, 25 Sep 2017 00:48:41 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:41 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:42 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:48:46 +0200 Global value 
+Mon, 25 Sep 2017 00:48:46 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
+Mon, 25 Sep 2017 00:48:46 +0200 Numero de Rows Encontradas 4
+Mon, 25 Sep 2017 00:48:46 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
+Mon, 25 Sep 2017 00:48:46 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
                                                     inner join usuario on usuario.rut = braizperuser.fk_rut)
                                                     ) where braizperuser.fk_rolid = 2424
-Wed, 20 Sep 2017 02:15:58 +0200 Vitrina - slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:15:58 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:03 +0200 Global value 
-Wed, 20 Sep 2017 02:16:03 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:03 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:03 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:16:03 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2425
-Wed, 20 Sep 2017 02:16:03 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:03 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:05 +0200 Global value 
-Wed, 20 Sep 2017 02:16:05 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:05 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:05 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:16:05 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2426
-Wed, 20 Sep 2017 02:16:05 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:05 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:07 +0200 Global value 
-Wed, 20 Sep 2017 02:16:07 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:07 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:07 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:16:07 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2427
-Wed, 20 Sep 2017 02:16:07 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:07 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:08 +0200 Global value 
-Wed, 20 Sep 2017 02:16:08 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:08 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:08 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:16:08 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 123456
-Wed, 20 Sep 2017 02:16:08 +0200 Vitrina - Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:16:08 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:16:12 +0200 Global value 
-Wed, 20 Sep 2017 02:16:12 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:12 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:12 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:16:12 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2424
-Wed, 20 Sep 2017 02:16:12 +0200 Vitrina - slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:16:12 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:15 +0200 Global value 
-Wed, 20 Sep 2017 02:16:15 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:15 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:15 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:16:15 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:16:15 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:16:15 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:15 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:16:15 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:21 +0200 Global value 
-Wed, 20 Sep 2017 02:16:21 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:21 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:21 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:16:21 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:16:21 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:16:21 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:21 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:16:23 +0200 Global value 
-Wed, 20 Sep 2017 02:16:23 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:23 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:23 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:16:23 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2426
-Wed, 20 Sep 2017 02:16:23 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:16:23 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:23 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:16:25 +0200 Global value 
-Wed, 20 Sep 2017 02:16:25 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:25 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:25 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:16:25 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2427
-Wed, 20 Sep 2017 02:16:25 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:16:25 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:25 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:16:28 +0200 Global value 
-Wed, 20 Sep 2017 02:16:28 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:28 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:28 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:16:28 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =123456
-Wed, 20 Sep 2017 02:16:28 +0200 Resultado de query por RolID->Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:16:28 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:16:28 +0200 Virtual->../virtual/59cdf
-Wed, 20 Sep 2017 02:16:28 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:34 +0200 Global value 
-Wed, 20 Sep 2017 02:16:34 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:34 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:34 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:16:34 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2424
-Wed, 20 Sep 2017 02:16:34 +0200 Vitrina - slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:16:34 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:37 +0200 Global value 
-Wed, 20 Sep 2017 02:16:37 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:37 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:37 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:16:37 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2427
-Wed, 20 Sep 2017 02:16:37 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:37 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:40 +0200 Global value 
-Wed, 20 Sep 2017 02:16:40 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:40 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:40 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:16:40 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2426
-Wed, 20 Sep 2017 02:16:40 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:40 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:42 +0200 Global value 
-Wed, 20 Sep 2017 02:16:42 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:42 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:42 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:16:42 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2425
-Wed, 20 Sep 2017 02:16:42 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:42 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:44 +0200 Global value 
-Wed, 20 Sep 2017 02:16:44 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:44 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:44 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:16:44 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2424
-Wed, 20 Sep 2017 02:16:44 +0200 Vitrina - slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:16:44 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:16:46 +0200 Global value 
-Wed, 20 Sep 2017 02:16:46 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:46 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:46 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:16:46 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2425
-Wed, 20 Sep 2017 02:16:46 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:46 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:49 +0200 Global value 
-Wed, 20 Sep 2017 02:16:49 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:49 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:49 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:16:49 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2426
-Wed, 20 Sep 2017 02:16:49 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:49 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:51 +0200 Global value 
-Wed, 20 Sep 2017 02:16:51 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:51 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:51 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:16:51 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 2427
-Wed, 20 Sep 2017 02:16:51 +0200 Vitrina - 
-Wed, 20 Sep 2017 02:16:51 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:16:52 +0200 Global value 
-Wed, 20 Sep 2017 02:16:52 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:16:52 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:16:52 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:16:52 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                                    ) where braizperuser.fk_rolid = 123456
-Wed, 20 Sep 2017 02:16:52 +0200 Vitrina - Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:16:52 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:17:01 +0200 Global value 
-Wed, 20 Sep 2017 02:17:01 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:17:01 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:17:01 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:17:01 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:17:01 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:17:01 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:17:01 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:17:01 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:17:05 +0200 Global value 
-Wed, 20 Sep 2017 02:17:05 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:17:05 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:17:05 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:17:05 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2427
-Wed, 20 Sep 2017 02:17:05 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:17:05 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:17:05 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:17:09 +0200 Global value 
-Wed, 20 Sep 2017 02:17:09 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:17:09 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:17:09 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:17:09 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =123456
-Wed, 20 Sep 2017 02:17:09 +0200 Resultado de query por RolID->Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:17:09 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:17:09 +0200 Virtual->../virtual/59cdf
-Wed, 20 Sep 2017 02:17:09 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:17:31 +0200 Global value 
-Wed, 20 Sep 2017 02:17:31 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:17:31 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:17:31 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:17:31 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:17:31 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:17:31 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:17:31 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:17:31 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:17:36 +0200 Global value 
-Wed, 20 Sep 2017 02:17:36 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:17:36 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:17:36 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:17:36 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:17:36 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:17:36 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:17:36 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:17:36 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:18:04 +0200 Global value 
-Wed, 20 Sep 2017 02:18:04 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:18:04 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:18:04 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:18:04 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:18:04 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:18:04 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:18:04 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:18:06 +0200 Global value 
-Wed, 20 Sep 2017 02:18:06 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:18:06 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:18:06 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:18:06 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2426
-Wed, 20 Sep 2017 02:18:06 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:18:06 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:18:06 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:18:08 +0200 Global value 
-Wed, 20 Sep 2017 02:18:08 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:18:08 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:18:08 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:18:08 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2427
-Wed, 20 Sep 2017 02:18:08 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:18:08 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:18:08 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:18:09 +0200 Global value 
-Wed, 20 Sep 2017 02:18:09 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:18:09 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:18:09 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:18:09 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =123456
-Wed, 20 Sep 2017 02:18:09 +0200 Resultado de query por RolID->Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:18:09 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:18:09 +0200 Virtual->../virtual/59cdf
-Wed, 20 Sep 2017 02:18:09 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:26:53 +0200 SearchFindShow->DisplaySQLResults() 
+Mon, 25 Sep 2017 00:48:46 +0200 Vitrina - slowdown75@hotmail.com
+Mon, 25 Sep 2017 00:48:46 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:47 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 00:48:47 +0200 SearchFindShow->DisplaySQLResults() 
                             SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
                             FROM ((braiz
                             INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
                             INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
                             where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:26:53 +0200 
+Mon, 25 Sep 2017 00:48:47 +0200 
                             SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
                             FROM ((braiz
                             INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
                             INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
                             where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:26:53 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:26:53 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:30:15 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:30:15 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:30:15 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:30:15 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:36:11 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:36:11 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:36:11 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:36:11 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:40:48 +0200 Global value 
-Wed, 20 Sep 2017 02:40:48 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:40:48 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:40:48 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:40:48 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:40:48 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:40:48 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:40:48 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:40:48 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:40:52 +0200 Global value 
-Wed, 20 Sep 2017 02:40:52 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:40:52 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:40:52 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:40:52 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:40:52 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:40:52 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:40:52 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:40:56 +0200 Global value 
-Wed, 20 Sep 2017 02:40:56 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:40:56 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:40:56 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:40:56 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2426
-Wed, 20 Sep 2017 02:40:56 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:40:56 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:40:56 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:41:49 +0200 Global value 
-Wed, 20 Sep 2017 02:41:49 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:41:49 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:41:49 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:41:49 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:41:49 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:41:49 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:41:49 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:41:49 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:41:54 +0200 Global value 
-Wed, 20 Sep 2017 02:41:54 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:41:54 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:41:54 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:41:54 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:41:54 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:41:54 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:41:54 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:42:06 +0200 Global value 
-Wed, 20 Sep 2017 02:42:06 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:42:06 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:42:06 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:42:06 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:42:06 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:42:06 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:42:06 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:42:06 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:23 +0200 Global value 
-Wed, 20 Sep 2017 02:43:23 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:43:23 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:43:23 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:43:23 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:43:23 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:43:23 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:23 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:43:23 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:32 +0200 Global value 
-Wed, 20 Sep 2017 02:43:32 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:43:32 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:43:32 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:43:32 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:43:32 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:43:32 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:32 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:43:32 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:40 +0200 Global value 
-Wed, 20 Sep 2017 02:43:40 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:43:40 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:43:40 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:43:40 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:43:40 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:43:40 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:40 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:43:40 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:55 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:43:55 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:43:55 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:43:55 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:52:38 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:52:38 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:52:38 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:52:38 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:52:52 +0200 Global value 
-Wed, 20 Sep 2017 02:52:52 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:52:52 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:52:52 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 0,1
-Wed, 20 Sep 2017 02:52:52 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2424
-Wed, 20 Sep 2017 02:52:52 +0200 Resultado de query por RolID->slowdown75@hotmail.com
-Wed, 20 Sep 2017 02:52:52 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:52:52 +0200 Virtual->../virtual/a31c8
-Wed, 20 Sep 2017 02:52:52 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:52:59 +0200 Global value 
-Wed, 20 Sep 2017 02:52:59 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:52:59 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:52:59 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 1,1
-Wed, 20 Sep 2017 02:52:59 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2425
-Wed, 20 Sep 2017 02:52:59 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:52:59 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:52:59 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:53:06 +0200 Global value 
-Wed, 20 Sep 2017 02:53:06 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:53:06 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:53:06 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 2,1
-Wed, 20 Sep 2017 02:53:06 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2426
-Wed, 20 Sep 2017 02:53:06 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:53:06 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:53:06 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:53:11 +0200 Global value 
-Wed, 20 Sep 2017 02:53:11 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:53:11 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:53:11 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 3,1
-Wed, 20 Sep 2017 02:53:11 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =2427
-Wed, 20 Sep 2017 02:53:11 +0200 Resultado de query por RolID->
-Wed, 20 Sep 2017 02:53:11 +0200 GetIDforFolder -  9c1185a5c5e9fc54612808977ee8f548b2258d31
-Wed, 20 Sep 2017 02:53:11 +0200 Virtual->../virtual/9c118
-Wed, 20 Sep 2017 02:53:17 +0200 Global value 
-Wed, 20 Sep 2017 02:53:17 +0200 SearchFindShow->CountAllRows() SELECT * FROM `braiz`
-Wed, 20 Sep 2017 02:53:17 +0200 Numero de Rows Encontradas 4
-Wed, 20 Sep 2017 02:53:17 +0200 SearchFindShow->DisplayPageResults() SELECT * FROM `braiz` limit 4,1
-Wed, 20 Sep 2017 02:53:17 +0200 SearchFindShow->DisplaySQLResults() SELECT email from (( braizperuser
-                                    inner join usuario on usuario.rut = braizperuser.fk_rut)
-                                    ) where braizperuser.fk_rolid =123456
-Wed, 20 Sep 2017 02:53:17 +0200 Resultado de query por RolID->Lukas.alarcon@gmail.com
-Wed, 20 Sep 2017 02:53:17 +0200 GetIDforFolder - Lukas.alarcon@gmail.com 59cdf3d7339b69392d34d2210ea611b3e556bd61
-Wed, 20 Sep 2017 02:53:17 +0200 Virtual->../virtual/59cdf
-Wed, 20 Sep 2017 02:53:17 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:53:34 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:53:34 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 02:53:34 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 02:53:34 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:00:20 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:00:20 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:00:20 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:00:20 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:02:58 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:02:58 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:02:58 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:02:58 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:03:27 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:03:27 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:03:27 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:03:27 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:05:00 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:05:00 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:05:00 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:05:00 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:05:36 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:05:36 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:05:36 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:05:36 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:06:13 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:06:13 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:06:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:06:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:09:13 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:09:13 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:09:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:09:13 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:10:22 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:10:22 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:10:22 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:10:22 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:10:50 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:10:50 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:10:50 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:10:50 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:11:30 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:11:30 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:11:30 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:11:30 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:12:45 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:12:45 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:12:45 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:12:45 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:14:52 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:14:52 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:14:52 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:14:52 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:15:19 +0200 SearchFindShow->DisplaySQLResults() 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:15:19 +0200 
-                            SELECT braiz.rolid,braiz.mtscuad,braiz.mtscrd,braiz.direccion,braiz.comuna,braiz.dorm,braiz.banos,braiz.piscina,braiz.gstocmn,braiz.ufprecio,braiz.ref,braiz.ctcan
-                            FROM ((braiz
-                            INNER JOIN braizperuser ON braizperuser.fk_rolid = braiz.rolid)
-                            INNER JOIN usuario ON usuario.rut = braizperuser.fk_rut) 
-                            where usuario.email='slowdown75@hotmail.com'
-Wed, 20 Sep 2017 03:15:19 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Wed, 20 Sep 2017 03:15:19 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
-Thu, 21 Sep 2017 03:33:48 +0200 correo sesionslowdown75@hotmail.com
+Mon, 25 Sep 2017 00:48:47 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 00:48:47 +0200 GetIDforFolder - slowdown75@hotmail.com a31c84dbf81e708208b736586f67a1711eaf04aa
+Mon, 25 Sep 2017 01:12:31 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:12:35 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:12:39 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:12:39 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:12:42 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:12:42 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:12:44 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:12:48 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:12:48 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:12:52 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:12:55 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:13:00 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:13:00 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:13:03 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:13:09 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:13:09 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:13:22 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:13:22 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:13:56 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:13:56 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:14:48 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:14:48 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:14:50 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:14:54 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:14:54 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:19:00 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:19:00 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:19:07 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:19:07 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:19:29 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:19:36 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:19:36 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:19:36 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 5
+Mon, 25 Sep 2017 01:19:36 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 01:19:36 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=5,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 01:19:47 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:19:51 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:19:56 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:19:56 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:19:56 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 4
+Mon, 25 Sep 2017 01:19:56 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 01:19:56 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=4,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 01:19:58 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:20:11 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 8
+Mon, 25 Sep 2017 01:20:11 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 01:20:11 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=8,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 01:20:11 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:20:11 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:20:13 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:20:37 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 9
+Mon, 25 Sep 2017 01:20:37 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 01:20:37 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=9,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 01:20:37 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:20:37 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:21:18 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:21:20 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:21:24 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:21:24 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:21:24 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 11
+Mon, 25 Sep 2017 01:21:24 +0200 Codigo error-> 302Datos Correctos
+Mon, 25 Sep 2017 01:21:24 +0200 User Session Update USer Data-> 
+UPDATE `usuario`
+SET
+`pass` = 'abc123',
+`nombre` ='lukas',
+`apellido` = 'alarcon',
+`fec_nac` = 0,
+`direccion` = 'santiago',
+`comuna`=11,
+`comprador` =1,
+`vendedor` =0,
+`admin` = 0 
+WHERE `rut` ='13769607-k'
+Mon, 25 Sep 2017 01:21:27 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:23:48 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:23:51 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:23:51 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:23:59 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:24:03 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:24:03 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:24:06 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:24:11 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:24:11 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:24:13 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:24:24 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:24:24 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:24:26 +0200 UserSession-GetUSerData SELECT * FROM usuario
+Mon, 25 Sep 2017 01:24:31 +0200 CAPTURA DE POSTS abc123 santiago 13769607-k lukas alarcon 
+Mon, 25 Sep 2017 01:24:31 +0200 Codigo error-> 404Comuna no se encuentra
+Mon, 25 Sep 2017 01:24:33 +0200 UserSession-GetUSerData SELECT * FROM usuario

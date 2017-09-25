@@ -17,7 +17,7 @@ class MyErrorHandler {
     
     public function ErrorFile($txt){
     
-            $myfile = fopen("errorHandler.txt", "a") or die("Unable to open file!");
+        $myfile = fopen("errorHandler.txt", "a") or die("Unable to open file!");
             
         $mydate = date(DATE_RFC2822);    
         

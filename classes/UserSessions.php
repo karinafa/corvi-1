@@ -271,7 +271,7 @@ public function CheckUserLogin($user, $pwd){
 public function CreateSessionInDb($IDnG,$correo){
     
     global $err;
-//Codificacion de Error
+    //Codificacion de Error
     //200: No hay problema
     //201: Session ya Creada
     //500: PRoblema con la insersion
@@ -286,7 +286,7 @@ public function CreateSessionInDb($IDnG,$correo){
      
      
      
-     if ($this->CheckSessionInDb($IDnG,$correo)!="302"){
+     if ($this->CheckSessionInDb($IDnG,$correo)!=302){
      
      $sql = "INSERT INTO sesionesweb (phpsession,email) VALUES ('".$IDnG."','".$hcorreo."')";
 
@@ -325,10 +325,10 @@ public function CheckSessionInDb($ID,$correo){
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-            $myerrorcode =  302;
+            $myerrorcode =  (int)302;
     }else{
     
-    $myerrorcode =  404;
+    $myerrorcode =  (int)404;
     }
     
     $conn->close();
@@ -374,8 +374,13 @@ public function LogoutSession($ID,$correo){
 public function UpdateUserData($rut,$password,$nombre,$apellido,$fec_nac,$direccion,$comuna,$comprador,$vendedor,$admin){
     
 $conn = $this->ConnectDb();
+global $err;
+
+
+
+
 $sql = "
-UPDATE usuario`
+UPDATE `usuario`
 SET
 `pass` = '".$password . "',
 `nombre` ='".$nombre."',
@@ -385,12 +390,14 @@ SET
 `comuna`=".$comuna.",
 `comprador` =".$comprador.",
 `vendedor` =".$vendedor.",
-`admin` = ".$admin.",
+`admin` = ".$admin." 
 WHERE `rut` ='".$rut."'";
+
+$err->ErrorFile("User Session Update USer Data-> ".$sql);
 
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
+    if ($result) {
     
         $conn->close();
         
