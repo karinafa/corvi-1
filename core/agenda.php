@@ -1,3 +1,90 @@
+<?php
+
+require_once '../classes/SearchFindShow.php';
+require_once '../classes/UserSessions.php';
+require_once '../classes/MyErrorHandler.php';
+
+session_start();
+
+/**
+ * 
+ * @Global Var
+ * 
+ */
+
+$correo = "";
+
+
+
+function SanityCheck(){
+    
+    global $correo;
+    
+if (isset($_SESSION['myemail'])){
+//desde sigin.php
+    
+    //echo "En sanity...";
+    
+    $correo = $_SESSION['myemail'];
+
+    return 1;
+
+    }
+        return 0;
+    }
+
+function redirect($url, $statusCode = 303)
+{
+   header('Location: ' . $url, true, $statusCode);
+   die();
+}
+
+
+//****
+//Valida la session contra Base de Datos
+
+function ShieldSession(){
+    
+    global $correo;
+        
+    //echo "Shield..";
+    
+      
+            $sess = new UserSessions(); 
+            //Echo "After Sanity...";
+            $Ecode =  $sess->CheckSessionInDb(session_id(),$correo);
+            //echo $Ecode;
+            
+        if ($Ecode!="302"){
+            
+            redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php");
+            
+        
+        }
+      
+           
+      
+    
+    
+    
+}
+
+/**
+ * Valida si la variablle correo esta seteada como
+ * parte de la sesion global
+ * 
+ */
+if (SanityCheck()){
+    ShieldSession();
+    }
+else{
+    redirect("https://".$_SERVER['SERVER_NAME']."/corvi/core/acceso.php"); 
+}
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,7 +104,7 @@
     <!--  Material Dashboard CSS    -->
     <link href="../assets/css/material-dashboard.css" rel="stylesheet"/>
 
-   
+   <link type="text/css" rel="stylesheet" media="all" href="../assets/css/estilos.css"> 
     
     
 
@@ -25,20 +112,156 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
     
-    <!-- demo stylesheet -->
-    	<link type="text/css" rel="stylesheet" href="../asset/media/layout.css" />    
+      
 
-        <link type="text/css" rel="stylesheet" href="../assets/themes/calendar_g.css" />    
-        <link type="text/css" rel="stylesheet" href="../assets/themes/calendar_green.css" />    
-        <link type="text/css" rel="stylesheet" href="../assets/themes/calendar_traditional.css" />    
-        <link type="text/css" rel="stylesheet" href="../assets/themes/calendar_transparent.css" />    
-        <link type="text/css" rel="stylesheet" href="../assets/themes/calendar_white.css" />    
+       
 
 	<!-- helper libraries -->
-	<script src="../assets/js/jquery-1.9.1.min.js" type="text/javascript"></script>
 	
-	<!-- daypilot libraries -->
-        <script src="../assets/js/daypilot/daypilot-all.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="../assets/js/jquery-clockpicker.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
+        <link href="../assets/js/bootstrap-clockpicker.min.js" rel="stylesheet" />
+	<script type="text/javascript">
+                    $('.clockpicker').clockpicker();
+        </script>
+        
+        
+        <script>
+	function generar_calendario(mes,anio)
+	{
+		var agenda=$(".cal");
+		agenda.html("<img src='../assets/img/loading.gif'>");
+		$.ajax({
+			type: "GET",
+			url: "ajax_calendario.php",
+			cache: false,
+			data: { mes:mes,anio:anio,accion:"generar_calendario" }
+		}).done(function( respuesta ) 
+		{
+			agenda.html(respuesta);
+		});
+	}
+		
+	function formatDate (input) {
+		var datePart = input.match(/\d+/g),
+		year = datePart[0].substring(2),
+		month = datePart[1], day = datePart[2];
+		return day+'-'+month+'-'+year;
+	}
+		
+		$(document).ready(function()
+		{
+			/* GENERAMOS CALENDARIO CON FECHA DE HOY */
+			generar_calendario("<?php if (isset($_GET["mes"])) echo $_GET["mes"]; ?>","<?php if (isset($_GET["anio"])) echo $_GET["anio"]; ?>");
+			
+			
+			/* AGREGAR UN EVENTO */
+			$(document).on("click",'a.add',function(e) 
+			{
+				e.preventDefault();
+				var id = $(this).data('evento');
+				var fecha = $(this).attr('rel');
+				//var id_evento = $(this).data('evento');
+				$('#mask').fadeIn(1000).html(
+                                "<div id='nuevo_evento' class='window' rel='"+fecha+"'>Agendar una  visita para "+formatDate(fecha)+"</h2><a href='#' class='close' rel='"+fecha+"'>&nbsp;</a><div id='respuesta_form'></div><form class='formeventos'><input type='text' id='hora' name='hora' class='form-control' value='09:30:00'><input type='text' rutcom='rutcom' name='rutcom' class='form-control' value='xx.xxx.xxx-x'><input type='text' name='rolid' id='rolid' class='required' value='Rol de casa escogida'><input type='text' name='evento_titulo' id='evento_titulo' class='required'><input type='button' name='Enviar' value='Guardar' class='enviar'><input type='hidden' name='evento_fecha' id='evento_fecha' value='"+fecha+"'></form></div>"
+           
+                                );
+			});
+			
+			/* LISTAR EVENTOS DEL DIA */
+			$(document).on("click",'a.modal',function(e) 
+			{
+				e.preventDefault();
+				var fecha = $(this).attr('rel');
+				
+				$('#mask').fadeIn(1000).html("<div id='nuevo_evento' class='window' rel='"+fecha+"'>Eventos del "+formatDate(fecha)+"</h2><a href='#' class='close' rel='"+fecha+"'>&nbsp;</a><div id='respuesta'></div><div id='respuesta_form'></div></div>");
+				$.ajax({
+					type: "GET",
+					url: "ajax_calendario.php",
+					cache: false,
+					data: { fecha:fecha,accion:"listar_evento" }
+				}).done(function( respuesta ) 
+				{
+					$("#respuesta_form").html(respuesta);
+				});
+			
+			});
+		
+			$(document).on("click",'.close',function (e) 
+			{
+				e.preventDefault();
+				$('#mask').fadeOut();
+				setTimeout(function() 
+				{ 
+					var fecha=$(".window").attr("rel");
+					var fechacal=fecha.split("-");
+					generar_calendario(fechacal[1],fechacal[0]);
+				}, 500);
+			});
+		
+			//guardar evento
+			$(document).on("click",'.enviar',function (e) 
+			{
+				e.preventDefault();
+				if ($("#evento_titulo").valid()==true)
+				{
+					$("#respuesta_form").html("<img src='../assets/img/loading.gif'>");
+					var evento=$("#evento_titulo").val();
+					var fecha=$("#evento_fecha").val();
+                                        var hora=$("#hora").val();
+                                        var rut_com=$("#rut_com").val();
+                                        //var rut_ven=$("#rut_ven").val();
+                                        var rolid=$("#rolid").val();
+					$.ajax({
+						type: "GET",
+						url: "ajax_calendario.php",
+						cache: false,
+						data: { rut_com:rut_com,rolid:rolid,evento:evento,fecha:fecha,hora:hora,accion:"guardar_evento" }
+					}).done(function( respuesta2 ) 
+					{
+						$("#respuesta_form").html(respuesta2);
+						$(".formeventos,.close").hide();
+						setTimeout(function() 
+						{ 
+							$('#mask').fadeOut('fast');
+							var fechacal=fecha.split("-");
+							generar_calendario(fechacal[1],fechacal[0]);
+						}, 3000);
+					});
+				}
+			});
+				
+			//eliminar evento
+			$(document).on("click",'.eliminar_evento',function (e) 
+			{
+				e.preventDefault();
+				var current_p=$(this);
+				$("#respuesta").html("<img src='../assets/img/loading.gif'>");
+				var id=$(this).attr("rel");
+				$.ajax({
+					type: "GET",
+					url: "ajax_calendario.php",
+					cache: false,
+					data: { id:id,accion:"borrar_evento" }
+				}).done(function( respuesta2 ) 
+				{
+					$("#respuesta").html(respuesta2);
+					current_p.parent("p").fadeOut();
+				});
+			});
+				
+			$(document).on("click",".anterior,.siguiente",function(e)
+			{
+				e.preventDefault();
+				var datos=$(this).attr("rel");
+				var nueva_fecha=datos.split("-");
+				generar_calendario(nueva_fecha[1],nueva_fecha[0]);
+			});
+
+		});
+		</script>
     
     
    
@@ -174,138 +397,20 @@
         <div class="hideSkipLink">
         </div>
         <div class="main">
+            <div class="calendario_ajax">
+		<div class="cal"></div><div id="mask"></div>
+	</div>
             
-            <div style="float:left; width: 160px;">
-                <div id="nav"></div>
-            </div>
-            <div style="margin-left: 160px;">
-                
-                <div class="space">
-                    Theme: <select id="theme">
-                        <option value="calendar_default">Default</option>
-                        <option value="calendar_white">White</option>                        
-                        <option value="calendar_g">Google-Like</option>                        
-                        <option value="calendar_green">Green</option>                        
-                        <option value="calendar_traditional">Traditional</option>                        
-                        <option value="calendar_transparent">Transparent</option>                        
-                    </select>
-                </div>
-                
-                <div id="dp"></div>
-            </div>
 
-            <script type="text/javascript">
-                
-                var nav = new DayPilot.Navigator("nav");
-                nav.showMonths = 3;
-                nav.skipMonths = 3;
-                nav.selectMode = "week";
-                nav.onTimeRangeSelected = function(args) {
-                    dp.startDate = args.day;
-                    dp.update();
-                    loadEvents();
-                };
-                nav.init();
-                
-                var dp = new DayPilot.Calendar("dp");
-                dp.viewType = "Week";
 
-                dp.onEventMoved = function (args) {
-                    $.post("backend_move.php", 
-                            {
-                                id: args.e.id(),
-                                newStart: args.newStart.toString(),
-                                newEnd: args.newEnd.toString()
-                            }, 
-                            function() {
-                                console.log("Moved.");
-                            });
-                };
-
-                dp.onEventResized = function (args) {
-                    $.post("backend_resize.php", 
-                            {
-                                id: args.e.id(),
-                                newStart: args.newStart.toString(),
-                                newEnd: args.newEnd.toString()
-                            }, 
-                            function() {
-                                console.log("Resized.");
-                            });
-                };
-
-                // event creating
-                dp.onTimeRangeSelected = function (args) {
-                    var name = prompt("New event name:", "Event");
-                    dp.clearSelection();
-                    if (!name) return;
-                    var e = new DayPilot.Event({
-                        start: args.start,
-                        end: args.end,
-                        id: DayPilot.guid(),
-                        resource: args.resource,
-                        text: name
-                    });
-                    dp.events.add(e);
-
-                    $.post("backend_create.php", 
-                            {
-                                start: args.start.toString(),
-                                end: args.end.toString(),
-                                name: name
-                            }, 
-                            function() {
-                                console.log("Created.");
-                            });
-
-                };
-
-                dp.onEventClick = function(args) {
-                    alert("clicked: " + args.e.id());
-                };
-
-                dp.init();
-
-                loadEvents();
-
-                function loadEvents() {
-                    var start = dp.visibleStart();
-                    var end = dp.visibleEnd();
-
-                    $.post("backend_events.php", 
-                    {
-                        start: start.toString(),
-                        end: end.toString()
-                    }, 
-                    function(data) {
-                        //console.log(data);
-                        dp.events.list = data;
-                        dp.update();
-                    });
-                }
-
-            </script>
+          
             
-            <script type="text/javascript">
-            $(document).ready(function() {
-                $("#theme").change(function(e) {
-                    dp.theme = this.value;
-                    dp.update();
-                });
-            });  
-            </script>
+            
 
         </div>
         <div class="clear">
         </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+      
                 </div>
                 
 
@@ -369,9 +474,9 @@
 </body>
 
 	<!--   Core JS Files   -->
-	<script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<!--<script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
 	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../assets/js/material.min.js" type="text/javascript"></script>
+	<script src="../assets/js/material.min.js" type="text/javascript"></script>-->
 
 	<!--  Notifications Plugin    -->
 	<script src="../assets/js/bootstrap-notify.js"></script>

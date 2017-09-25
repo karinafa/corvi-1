@@ -115,10 +115,23 @@ else{
     
     
     <!--AJAX FORM-->  
-      <script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
-      <script src="../assets/js/jquery.form.js"></script>
-      
-      <script src="../assets/js/SimpleAjaxUploader.js"></script>
+        <!--<script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>-->
+        <script src="../assets/js/jquery.form.js"></script>
+        <script src="../assets/js/SimpleAjaxUploader.js"></script>
+        <script src="../assets/js/simpleUpload.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../assets/js/material.min.js" type="text/javascript"></script>
+
+	<!--  Notifications Plugin    -->
+	<script src="../assets/js/bootstrap-notify.js"></script>
+
+	<!-- Material Dashboard javascript methods -->
+	<script src="../assets/js/material-dashboard.js"></script>
+    
         
         <script>
         
@@ -247,7 +260,49 @@ window.onload = function() {
 	});
 };
 </script>
+<script>
+$(document).ready(function(){
+ 
+    $('input[type=file]').change(function(){
+ 
+        $(this).simpleUpload("u.php", {
+ 
+            start: function(file){
+                //upload started 
+                $('#filename').html(file.name);
+                $('#progress').html("");
+                $('#progressBar').width(0);
+            },
+ 
+            progress: function(progress){
+                //received progress 
+                $('#progress').html("Progress: " + Math.round(progress) + "%");
+                $('#progressBar').width(progress + "%");
+            },
+ 
+            success: function(data){
+                //upload successful 
+                $('#progress').html("Success!<br>Data: " + JSON.stringify(data));
+            },
+ 
+            error: function(error){
+                //upload failed 
+                $('#progress').html("Failure!<br>" + error.name + ": " + error.message);
+            }
+ 
+        });
+ 
+    });
+ 
+});
+
+
+
+
+</script>
     
+    
+   
     
     
     
@@ -592,7 +647,7 @@ window.onload = function() {
                                 
                                 <div class="row" style="padding-top:10px;">
                                 <div class="col-xs-2">
-                                <button id="uploadBtn" class="btn btn-large btn-primary">Escoja Foto</button>
+                                <button id="uploadBtn" class="btn btn-large btn-primary">Subir Foto</button>
                                 </div>
                                 <div class="col-xs-10">
                                     <div id="progressOuter" class="progress progress-striped active" style="display:none;">
@@ -610,19 +665,7 @@ window.onload = function() {
                                 </div>    
                                 </div>
 			
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+         
                     
                     <!-- SIGUIENTE TAB -->
                     
@@ -630,91 +673,19 @@ window.onload = function() {
                     
 			<div class="tab-pane" id="settings">
                                 <div class="card-content table-responsive table-full-width">
-                                <div class="container">
+                                    <div class="container">
+		  
+                                        <div id="filename"></div>
+                                        <div id="progress"></div>
+                                        <div id="progressBar"></div>
+                                        <input type="file" name="file">
                                 
-                                <div class="row" style="padding-top:10px;">
-                                <div class="col-xs-2">
-                                <button id="uploadBtn_d" class="btn btn-large btn-primary">Subir Documento</button>
+                                    
+		
+                                    </div>       
+                                
                                 </div>
-                                <div class="col-xs-10">
-                                    <div id="progressOuter_d" class="progress progress-striped active" style="display:none;">
-                                       <div id="progressBar_d" class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                    </div>
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="row" style="padding-top:10px;">
-                                    <div class="col-xs-10">
-                                        <div id="msgBox_d">
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>    
-                                <table class="table">
-                                   
-			<tbody>
-                            
-                                <tr>
-					<div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios">
-                                                 Certificado de Hipoteca
-                                            </label>
-                                        </div>
-					
-				</tr>
-				<tr>
-					<div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios">
-                                                 Copia de Inscripcion de Dominio con Vigencia
-                                            </label>
-                                        </div>
-					
-				</tr>
-				<tr>
-					<div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios">
-                                                 Titulos de Dominios de los últimos 10 años
-                                            </label>
-                                        </div>
-					
-					
-				</tr>
-				<tr>
-					<div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios">
-                                                 Certificado de Expropiación Fiscal
-                                            </label>
-                                        </div>
-					
-					
-				</tr>
-				<tr>
-					<div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios">
-                                                 Certificado de Avaluo Fiscal
-                                            </label>
-                                        </div>
-					
-					
-				</tr>
-				<tr>
-					<div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios">
-                                                 Certificado de Deuda
-                                            </label>
-                                        </div>				
-				</tr>
-			</tbody>
-		</table>
-
-	</div>
-				<br/>
+				
 			</div>
 		</div>
 	</div>
@@ -786,15 +757,7 @@ window.onload = function() {
 </body>
 
 	<!--   Core JS Files   -->
-	<script src="../assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
-	<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="../assets/js/material.min.js" type="text/javascript"></script>
-
-	<!--  Notifications Plugin    -->
-	<script src="../assets/js/bootstrap-notify.js"></script>
-
-	<!-- Material Dashboard javascript methods -->
-	<script src="../assets/js/material-dashboard.js"></script>
+	
         
        
     
