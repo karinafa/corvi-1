@@ -321,7 +321,10 @@ public function CheckSessionInDb($ID,$correo){
     $conn = $this->ConnectDb();
     $hcorreo = hash('ripemd160', $correo);
     // Validación de correo y password
-    $sql = "SELECT phpsession,email from sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
+    //$sql = "SELECT phpsession,email from sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
+    
+    $sql = "SELECT phpsession,email from sesionesweb where email='".$hcorreo."'";
+    
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -345,7 +348,7 @@ public function LogoutSession($ID,$correo){
     
     $conn = $this->ConnectDb();
     $hcorreo = hash('ripemd160', $correo);
-    $sql = "DELETE from sesionesweb where phpsession='".$ID."' and email='".$hcorreo."'";
+    $sql = "DELETE from sesionesweb where email='".$hcorreo."'";
     $conn->query($sql);
     $myerr = mysqli_affected_rows($conn);
     
