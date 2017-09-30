@@ -119,10 +119,13 @@ else{
 	<!-- helper libraries -->
 	
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+        <script src="../assets/js/jquery-clockpicker.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/localization/messages_es.js "></script>
-        
+         <link href="../assets/js/bootstrap-clockpicker.min.js" rel="stylesheet" />
+	<script type="text/javascript">
+                    $('.clockpicker').clockpicker();
+        </script>
         
         
         <script>
